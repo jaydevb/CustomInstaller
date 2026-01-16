@@ -1,0 +1,106 @@
+/**
+ * @file
+ * CSS Custom Properties (Variables) for The Blueprint installer theme.
+ */
+
+:root {
+  /* Purple Gradient Colors - Main brand colors */
+  --blueprint-purple-light: #C4A5F5;
+  --blueprint-purple-medium: #A78BFA;
+  --blueprint-purple-dark: #8B5CF6;
+  --blueprint-purple-darker: #7C3AED;
+  --blueprint-purple-darkest: #6D28D9;
+  
+  /* Accent Colors */
+  --blueprint-blue: #00A8E8;
+  --blueprint-blue-hover: #0096D1;
+  --blueprint-blue-active: #0084BA;
+  --blueprint-blue-light: #33B9ED;
+  
+  /* Neutral Colors */
+  --blueprint-white: #FFFFFF;
+  --blueprint-gray-50: #F9FAFB;
+  --blueprint-gray-100: #F3F4F6;
+  --blueprint-gray-200: #E5E7EB;
+  --blueprint-gray-300: #D1D5DB;
+  --blueprint-gray-400: #9CA3AF;
+  --blueprint-gray-500: #6B7280;
+  --blueprint-gray-600: #4B5563;
+  --blueprint-gray-700: #374151;
+  --blueprint-gray-800: #1F2937;
+  --blueprint-gray-900: #111827;
+  
+  /* Semantic Colors */
+  --blueprint-text-dark: var(--blueprint-gray-800);
+  --blueprint-text-medium: var(--blueprint-gray-500);
+  --blueprint-text-light: var(--blueprint-gray-400);
+  --blueprint-border: var(--blueprint-gray-200);
+  --blueprint-border-focus: var(--blueprint-blue);
+  
+  /* Gradients */
+  --blueprint-gradient-main: linear-gradient(180deg, #C4A5F5 0%, #8B5CF6 100%);
+  --blueprint-gradient-header: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+  --blueprint-gradient-subtle: linear-gradient(180deg, #E9D5FF 0%, #C4A5F5 100%);
+  
+  /* Spacing Scale */
+  --blueprint-space-xs: 0.5rem;      /* 8px */
+  --blueprint-space-sm: 1rem;        /* 16px */
+  --blueprint-space-md: 1.5rem;      /* 24px */
+  --blueprint-space-lg: 2rem;        /* 32px */
+  --blueprint-space-xl: 3rem;        /* 48px */
+  --blueprint-space-2xl: 4rem;       /* 64px */
+  --blueprint-space-3xl: 6rem;       /* 96px */
+  
+  /* Typography */
+  --blueprint-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --blueprint-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  
+  --blueprint-font-size-xs: 0.75rem;    /* 12px */
+  --blueprint-font-size-sm: 0.875rem;   /* 14px */
+  --blueprint-font-size-base: 1rem;     /* 16px */
+  --blueprint-font-size-lg: 1.125rem;   /* 18px */
+  --blueprint-font-size-xl: 1.25rem;    /* 20px */
+  --blueprint-font-size-2xl: 1.5rem;    /* 24px */
+  --blueprint-font-size-3xl: 2rem;      /* 32px */
+  --blueprint-font-size-4xl: 2.5rem;    /* 40px */
+  --blueprint-font-size-5xl: 3rem;      /* 48px */
+  
+  --blueprint-font-weight-normal: 400;
+  --blueprint-font-weight-medium: 500;
+  --blueprint-font-weight-semibold: 600;
+  --blueprint-font-weight-bold: 700;
+  --blueprint-font-weight-extrabold: 800;
+  
+  --blueprint-line-height-tight: 1.25;
+  --blueprint-line-height-normal: 1.5;
+  --blueprint-line-height-relaxed: 1.75;
+  
+  /* Border Radius */
+  --blueprint-radius-sm: 0.375rem;   /* 6px */
+  --blueprint-radius-md: 0.5rem;     /* 8px */
+  --blueprint-radius-lg: 1rem;       /* 16px */
+  --blueprint-radius-xl: 1.5rem;     /* 24px */
+  --blueprint-radius-full: 9999px;
+  
+  /* Shadows */
+  --blueprint-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --blueprint-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --blueprint-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --blueprint-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --blueprint-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --blueprint-shadow-focus: 0 0 0 3px rgba(0, 168, 232, 0.15);
+  
+  /* Transitions */
+  --blueprint-transition-fast: 150ms ease;
+  --blueprint-transition-base: 200ms ease;
+  --blueprint-transition-slow: 300ms ease;
+  
+  /* Z-index Scale */
+  --blueprint-z-base: 0;
+  --blueprint-z-dropdown: 1000;
+  --blueprint-z-sticky: 1100;
+  --blueprint-z-fixed: 1200;
+  --blueprint-z-modal: 1300;
+  --blueprint-z-popover: 1400;
+  --blueprint-z-tooltip: 1500;
+}

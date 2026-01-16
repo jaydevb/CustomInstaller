@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * The Blueprint custom installer page template.
+ *
+ * Available variables:
+ * - title: The page title.
+ * - page: The page content.
+ * - current_step: Current step number.
+ * - total_steps: Total number of steps.
+ */
+#}
+<div class="blueprint-installer">
+  <header class="blueprint-installer__header">
+    <h1 class="blueprint-installer__title">{{ 'The Blueprint'|t }}</h1>
+    
+    {# Progress Indicator - 3 dots #}
+    <div class="blueprint-progress" role="progressbar" aria-label="{{ 'Installation progress'|t }}">
+      {% set current = current_step|default(1) %}
+      {% set total = total_steps|default(3) %}
+      
+      {% for i in 1..total %}
+        <div class="blueprint-progress__dot 
+          {{ current == i ? 'blueprint-progress__dot--active' : '' }}
+          {{ current > i ? 'blueprint-progress__dot--completed' : '' }}"
+          aria-label="{{ 'Step @step of @total'|t({'@step': i, '@total': total}) }}">
+        </div>
+      {% endfor %}
+    </div>
+  </header>
+
+  <div class="blueprint-installer__content">
+    <main class="blueprint-installer__main" role="main">
+      
+      {% if page.highlighted %}
+        <div class="highlighted">
+          {{ page.highlighted }}
+        </div>
+      {% endif %}
+
+      {% if title and not hide_title %}
+        <h2 class="page-title visually-hidden">
+          {{ title }}
+        </h2>
+      {% endif %}
+
+      <div class="page-content">
+        {{ page.content }}
+      </div>
+      
+    </main>
+
+    {% if page.sidebar_second %}
+      <aside class="blueprint-installer__sidebar">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+  </div>
+
+  {% if page.page_bottom %}
+    <footer class="blueprint-installer__footer">
+      {{ page.page_bottom }}
+    </footer>
+  {% endif %}
+</div>

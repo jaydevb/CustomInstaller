@@ -1,0 +1,11 @@
+name: Custom Theme
+type: theme
+core_version_requirement: '^11.1'
+description: 'The Blueprint design theme for Custom Installer. Modern, beautiful installation experience.'
+base theme: claro
+
+libraries-extend:
+  claro/maintenance-page:
+    - custom_theme/blueprint
+  core/drupal.progress:
+    - custom_theme/progress

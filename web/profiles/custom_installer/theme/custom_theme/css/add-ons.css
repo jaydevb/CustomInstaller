@@ -1,0 +1,145 @@
+/**
+ * @file
+ * Recipe/Add-ons selection styling for The Blueprint installer.
+ */
+
+/* Form group wrapper */
+.cms-installer__form-group {
+  margin: var(--blueprint-space-lg) 0;
+}
+
+/* Add-ons container */
+#edit-add-ons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--blueprint-space-md);
+  padding-block: 1px;
+  margin: var(--blueprint-space-lg) 0;
+}
+
+#edit-add-ons .form-item {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+
+/* Hide the actual checkbox (we'll style the label) */
+#edit-add-ons [type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+/* Style the label as a button */
+#edit-add-ons label {
+  display: inline-block;
+  border: 1.5px solid var(--blueprint-border);
+  font-size: var(--blueprint-font-size-base);
+  padding: var(--blueprint-space-md) var(--blueprint-space-lg);
+  border-radius: var(--blueprint-radius-md);
+  font-weight: var(--blueprint-font-weight-semibold);
+  line-height: 1;
+  user-select: none;
+  margin: 0;
+  cursor: pointer;
+  transition: all var(--blueprint-transition-base);
+  background: var(--blueprint-white);
+  color: var(--blueprint-text-dark);
+}
+
+#edit-add-ons label:hover {
+  color: var(--blueprint-blue);
+  border-color: var(--blueprint-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--blueprint-shadow-sm);
+}
+
+/* Checked state */
+#edit-add-ons :checked + label {
+  position: relative;
+  border-color: var(--blueprint-blue);
+  color: var(--blueprint-blue);
+  background: rgba(0, 168, 232, 0.05);
+}
+
+/* Checkmark icon for checked items */
+#edit-add-ons :checked + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: translate(-50%, -50%);
+  content: "✓";
+  background-color: var(--blueprint-blue);
+  color: var(--blueprint-white);
+  border-radius: var(--blueprint-radius-full);
+  font-size: var(--blueprint-font-size-xs);
+  font-weight: var(--blueprint-font-weight-bold);
+  box-shadow: var(--blueprint-shadow-sm);
+}
+
+/* RTL support */
+[dir="rtl"] #edit-add-ons :checked + label:before {
+  left: auto;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Focus state for accessibility */
+#edit-add-ons [type="checkbox"]:focus + label {
+  outline: 3px solid var(--blueprint-blue);
+  outline-offset: 2px;
+  opacity: 0.3;
+}
+
+/* Info text styling */
+.cms-installer__info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--blueprint-space-xs);
+  color: var(--blueprint-text-medium);
+  font-size: var(--blueprint-font-size-sm);
+  margin-top: var(--blueprint-space-md);
+}
+
+.cms-installer__info::before {
+  content: "ℹ";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--blueprint-blue);
+  color: var(--blueprint-white);
+  border-radius: var(--blueprint-radius-full);
+  font-size: var(--blueprint-font-size-sm);
+  font-weight: var(--blueprint-font-weight-bold);
+  flex-shrink: 0;
+}
+
+/* Forced colors mode support */
+@media (forced-colors: active) {
+  #edit-add-ons :checked + label:before {
+    content: "✓";
+    border: solid 2px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  #edit-add-ons {
+    gap: var(--blueprint-space-sm);
+  }
+  
+  #edit-add-ons label {
+    font-size: var(--blueprint-font-size-sm);
+    padding: var(--blueprint-space-sm) var(--blueprint-space-md);
+  }
+}

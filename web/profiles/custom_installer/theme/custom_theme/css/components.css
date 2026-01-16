@@ -1,0 +1,273 @@
+/**
+ * @file
+ * Component styles for The Blueprint installer (forms, buttons, inputs).
+ */
+
+/* Question Label */
+.blueprint-question-label {
+  font-size: var(--blueprint-font-size-sm);
+  color: var(--blueprint-text-medium);
+  margin-bottom: var(--blueprint-space-sm);
+  font-weight: var(--blueprint-font-weight-medium);
+  display: block;
+}
+
+/* Main Question Text */
+.blueprint-question {
+  font-size: var(--blueprint-font-size-2xl);
+  font-weight: var(--blueprint-font-weight-bold);
+  color: var(--blueprint-text-dark);
+  margin: 0 0 var(--blueprint-space-lg) 0;
+  line-height: var(--blueprint-line-height-tight);
+}
+
+@media (min-width: 768px) {
+  .blueprint-question {
+    font-size: var(--blueprint-font-size-3xl);
+  }
+}
+
+/* Form Wrapper */
+.blueprint-form {
+  width: 100%;
+}
+
+/* Input Fields */
+.blueprint-input,
+.blueprint-form input[type="text"],
+.blueprint-form input[type="email"],
+.blueprint-form input[type="password"],
+.blueprint-form input[type="tel"],
+.blueprint-form input[type="url"],
+.blueprint-form textarea,
+.blueprint-form select {
+  width: 100%;
+  padding: var(--blueprint-space-md);
+  border: 1.5px solid var(--blueprint-border);
+  border-radius: var(--blueprint-radius-md);
+  font-size: var(--blueprint-font-size-base);
+  font-family: var(--blueprint-font-family);
+  color: var(--blueprint-text-dark);
+  background: var(--blueprint-white);
+  transition: all var(--blueprint-transition-base);
+  margin-bottom: var(--blueprint-space-md);
+  outline: none;
+}
+
+.blueprint-input::placeholder,
+.blueprint-form input::placeholder,
+.blueprint-form textarea::placeholder {
+  color: var(--blueprint-text-light);
+}
+
+.blueprint-input:focus,
+.blueprint-form input:focus,
+.blueprint-form textarea:focus,
+.blueprint-form select:focus {
+  border-color: var(--blueprint-border-focus);
+  box-shadow: var(--blueprint-shadow-focus);
+}
+
+.blueprint-input:hover:not(:focus),
+.blueprint-form input:hover:not(:focus),
+.blueprint-form textarea:hover:not(:focus) {
+  border-color: var(--blueprint-gray-300);
+}
+
+/* Error State */
+.blueprint-input.error,
+.blueprint-form input.error {
+  border-color: #DC2626;
+}
+
+.blueprint-form .form-item--error-message {
+  color: #DC2626;
+  font-size: var(--blueprint-font-size-sm);
+  margin-top: calc(var(--blueprint-space-xs) * -1);
+  margin-bottom: var(--blueprint-space-md);
+}
+
+/* Form Labels */
+.blueprint-form label {
+  font-size: var(--blueprint-font-size-base);
+  font-weight: var(--blueprint-font-weight-medium);
+  color: var(--blueprint-text-dark);
+  margin-bottom: var(--blueprint-space-xs);
+  display: block;
+}
+
+.blueprint-form label.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Actions Container */
+.blueprint-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--blueprint-space-md);
+  margin-top: var(--blueprint-space-xl);
+}
+
+/* Buttons */
+.blueprint-button,
+.blueprint-form .form-actions input[type="submit"],
+.blueprint-form .button--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--blueprint-space-xs);
+  padding: var(--blueprint-space-md) var(--blueprint-space-lg);
+  background: var(--blueprint-blue);
+  color: var(--blueprint-white);
+  border: none;
+  border-radius: var(--blueprint-radius-md);
+  font-size: var(--blueprint-font-size-base);
+  font-weight: var(--blueprint-font-weight-semibold);
+  font-family: var(--blueprint-font-family);
+  cursor: pointer;
+  transition: all var(--blueprint-transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-button::after,
+.blueprint-form .form-actions input[type="submit"]::after {
+  content: '→';
+  margin-left: var(--blueprint-space-xs);
+  font-size: var(--blueprint-font-size-lg);
+  transition: transform var(--blueprint-transition-base);
+}
+
+.blueprint-button:hover,
+.blueprint-form .form-actions input[type="submit"]:hover {
+  background: var(--blueprint-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--blueprint-shadow-md);
+}
+
+.blueprint-button:hover::after,
+.blueprint-form .form-actions input[type="submit"]:hover::after {
+  transform: translateX(3px);
+}
+
+.blueprint-button:active,
+.blueprint-form .form-actions input[type="submit"]:active {
+  background: var(--blueprint-blue-active);
+  transform: translateY(0);
+  box-shadow: var(--blueprint-shadow-sm);
+}
+
+.blueprint-button:focus,
+.blueprint-form .form-actions input[type="submit"]:focus {
+  outline: 3px solid rgba(0, 168, 232, 0.3);
+  outline-offset: 2px;
+}
+
+.blueprint-button:disabled,
+.blueprint-form .form-actions input[type="submit"]:disabled {
+  background: var(--blueprint-gray-300);
+  color: var(--blueprint-gray-500);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary Button */
+.blueprint-button--secondary {
+  background: transparent;
+  color: var(--blueprint-text-dark);
+  border: 1.5px solid var(--blueprint-border);
+}
+
+.blueprint-button--secondary::after {
+  display: none;
+}
+
+.blueprint-button--secondary:hover {
+  background: var(--blueprint-gray-50);
+  border-color: var(--blueprint-gray-300);
+}
+
+/* Progress Bar (for recipe installation) */
+.progress {
+  margin: var(--blueprint-space-lg) 0;
+}
+
+.progress__track {
+  height: 8px;
+  background: var(--blueprint-gray-200);
+  border-radius: var(--blueprint-radius-full);
+  overflow: hidden;
+  border: none;
+}
+
+.progress__bar {
+  height: 100%;
+  background: var(--blueprint-blue);
+  border-radius: var(--blueprint-radius-full);
+  transition: width var(--blueprint-transition-slow);
+  border: none;
+}
+
+.progress__label,
+.progress__description {
+  font-size: var(--blueprint-font-size-sm);
+  color: var(--blueprint-text-medium);
+  margin-top: var(--blueprint-space-xs);
+}
+
+.progress__percentage {
+  font-weight: var(--blueprint-font-weight-semibold);
+}
+
+/* Messages */
+.messages {
+  margin: var(--blueprint-space-md) 0;
+  padding: var(--blueprint-space-md);
+  border-radius: var(--blueprint-radius-md);
+  font-size: var(--blueprint-font-size-sm);
+}
+
+.messages--status {
+  background: #DEF7EC;
+  color: #03543F;
+  border-left: 4px solid #0E9F6E;
+}
+
+.messages--warning {
+  background: #FEF3C7;
+  color: #78350F;
+  border-left: 4px solid #F59E0B;
+}
+
+.messages--error {
+  background: #FEE2E2;
+  color: #991B1B;
+  border-left: 4px solid #DC2626;
+}
+
+/* Checkboxes (for recipe selection) */
+.blueprint-form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--blueprint-space-sm);
+  cursor: pointer;
+  accent-color: var(--blueprint-blue);
+}
+
+/* Helper Text */
+.blueprint-helper-text {
+  font-size: var(--blueprint-font-size-sm);
+  color: var(--blueprint-text-medium);
+  margin-top: calc(var(--blueprint-space-xs) * -1);
+  margin-bottom: var(--blueprint-space-md);
+}

@@ -1,0 +1,15 @@
+blueprint:
+  css:
+    theme:
+      css/variables.css: { weight: -10 }
+      css/layout.css: { weight: -9 }
+      css/components.css: { weight: -8 }
+      css/add-ons.css: { weight: -7 }
+  dependencies:
+    - core/once
+
+progress:
+  js:
+    js/progress.js: {}
+  dependencies:
+    - core/drupal

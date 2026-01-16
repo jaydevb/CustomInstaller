@@ -1,0 +1,186 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Theme functions for Custom Theme (The Blueprint installer).
+ */
+
+/**
+ * Implements template_preprocess_install_page().
+ */
+function custom_theme_preprocess_install_page(array &$variables): void {
+  // Calculate current step based on install state
+  $install_state = $GLOBALS['install_state'] ?? [];
+  $variables['current_step'] = _custom_theme_get_current_step($install_state);
+  $variables['total_steps'] = 3; // Updated to 3 steps: Recipes, Site Name, Account
+  
+  // Hide title for custom forms (we render it in the form itself)
+  $active_task = $install_state['active_task'] ?? '';
+  if (in_array($active_task, [
+    'Drupal\RecipeKit\Installer\Form\RecipesForm',
+    'Drupal\RecipeKit\Installer\Form\SiteNameForm',
+    'installer_recipes_form',
+    'installer_site_name_form',
+  ])) {
+    $variables['hide_title'] = TRUE;
+  }
+}
+
+/**
+ * Helper function to determine current installation step.
+ */
+function _custom_theme_get_current_step(array $install_state): int {
+  $task = $install_state['active_task'] ?? '';
+  
+  // Map installation tasks to step numbers (3 steps total)
+  $step_map = [
+    // Step 1: Recipe selection - "Get started"
+    'Drupal\RecipeKit\Installer\Form\RecipesForm' => 1,
+    'installer_recipes_form' => 1,
+    
+    // Step 2: Site name - "What should we call your masterpiece?"
+    'Drupal\RecipeKit\Installer\Form\SiteNameForm' => 2,
+    'installer_site_name_form' => 2,
+    
+    // Database settings (hidden/automatic)
+    'install_settings_form' => 2,
+    'install_verify_settings' => 2,
+    
+    // Step 3: Account creation - "Create your account"
+    'install_configure_form' => 3,
+    
+    // Background tasks
+    'install_verify_requirements' => 3,
+    'install_profile_modules' => 3,
+    'install_profile_themes' => 3,
+    'install_install_profile' => 3,
+    'install_finished' => 3,
+  ];
+  
+  return $step_map[$task] ?? 1;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for installer_recipes_form.
+ */
+function custom_theme_form_installer_recipes_form_alter(array &$form): void {
+  // Keep "Get started" as is
+  $form['#title'] = t('Get started');
+  
+  $form['help'] = [
+    '#prefix' => '<p class="blueprint-question-label">',
+    '#markup' => t('Question 1/3'),
+    '#suffix' => '</p>',
+    '#weight' => -100,
+  ];
+  
+  $form['question'] = [
+    '#type' => 'markup',
+    '#markup' => '<h2 class="blueprint-question">' . t('Get started') . '</h2>' .
+                 '<p class="blueprint-helper-text">' . t('You can select pre-configured types of content now, or add them later.') . '</p>',
+    '#weight' => -90,
+  ];
+  
+  // Add Blueprint styling
+  $form['#attributes']['class'][] = 'blueprint-form';
+  
+  if (isset($form['add_ons'])) {
+    $form['add_ons'] += [
+      '#prefix' => '<div class="cms-installer__form-group">',
+      '#suffix' => '</div>',
+    ];
+    
+    // Add info text
+    $form['add_ons']['help'] = [
+      '#prefix' => '<p class="blueprint-helper-text cms-installer__info">',
+      '#markup' => t("Don't see what you're looking for? You can set up customized content later."),
+      '#suffix' => '</p>',
+      '#weight' => 100,
+    ];
+  }
+  
+  if (isset($form['actions'])) {
+    $form['actions']['#attributes']['class'][] = 'blueprint-actions';
+    $form['actions']['submit']['#attributes']['class'][] = 'blueprint-button';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for installer_site_name_form.
+ */
+function custom_theme_form_installer_site_name_form_alter(array &$form): void {
+  // Replace "Give your site a name" with our custom question
+  $form['#title'] = t('Name your project');
+  
+  $form['question_label'] = [
+    '#type' => 'markup',
+    '#markup' => '<div class="blueprint-question-label">' . t('Question 2/3') . '</div>',
+    '#weight' => -100,
+  ];
+  
+  $form['question'] = [
+    '#type' => 'markup',
+    '#markup' => '<h2 class="blueprint-question">' . t("To get started, let's give this project a soul. What should we call your masterpiece?") . '</h2>',
+    '#weight' => -90,
+  ];
+  
+  // Add Blueprint styling
+  $form['#attributes']['class'][] = 'blueprint-form';
+  
+  if (isset($form['site_name'])) {
+    $form['site_name']['#title_display'] = 'invisible';
+    $form['site_name']['#attributes']['placeholder'] = t('Enter project name');
+    $form['site_name']['#attributes']['class'][] = 'blueprint-input';
+  }
+  
+  if (isset($form['actions'])) {
+    $form['actions']['#attributes']['class'][] = 'blueprint-actions';
+    $form['actions']['submit']['#attributes']['class'][] = 'blueprint-button';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for install_configure_form.
+ */
+function custom_theme_form_install_configure_form_alter(array &$form): void {
+  $form['#title'] = t('Create your account');
+  
+  // Add Blueprint question styling
+  $form['help'] = [
+    '#type' => 'markup',
+    '#markup' => '<p class="blueprint-question-label">' . t('Question 3/3') . '</p>' .
+                 '<h2 class="blueprint-question">' . t('Who will be the guardian of this masterpiece?') . '</h2>' .
+                 '<p class="blueprint-helper-text">' . t('Create your administrator account to manage your site.') . '</p>',
+    '#weight' => -40,
+  ];
+  
+  // Add Blueprint styling
+  $form['#attributes']['class'][] = 'blueprint-form';
+  
+  if (isset($form['actions'])) {
+    $form['actions']['#attributes']['class'][] = 'blueprint-actions';
+    $form['actions']['submit']['#value'] = t('Finish');
+    $form['actions']['submit']['#attributes']['class'][] = 'blueprint-button';
+  }
+  
+  // Add form styling for input fields
+  if (isset($form['admin_account']['account']['name'])) {
+    $form['admin_account']['account']['name']['#attributes']['class'][] = 'blueprint-input';
+  }
+  if (isset($form['admin_account']['account']['mail'])) {
+    $form['admin_account']['account']['mail']['#attributes']['class'][] = 'blueprint-input';
+  }
+  if (isset($form['admin_account']['account']['pass'])) {
+    $form['admin_account']['account']['pass']['#attributes']['class'][] = 'blueprint-input';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for progress_bar.
+ */
+function custom_theme_preprocess_progress_bar(array &$variables): void {
+  // Add Blueprint-specific classes
+  $variables['attributes']['class'][] = 'blueprint-progress-bar';
+}

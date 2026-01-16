@@ -1,0 +1,165 @@
+/**
+ * @file
+ * Main layout styles for The Blueprint installer.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.install-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--blueprint-gradient-main);
+  font-family: var(--blueprint-font-family);
+  color: var(--blueprint-text-dark);
+  line-height: var(--blueprint-line-height-normal);
+  border: none;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main Blueprint Container */
+.blueprint-installer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--blueprint-space-lg);
+  position: relative;
+}
+
+/* Header Section */
+.blueprint-installer__header {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: var(--blueprint-space-xl);
+  padding-top: var(--blueprint-space-lg);
+}
+
+.blueprint-installer__title {
+  font-size: var(--blueprint-font-size-4xl);
+  font-weight: var(--blueprint-font-weight-bold);
+  color: var(--blueprint-white);
+  margin: 0 0 var(--blueprint-space-lg) 0;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .blueprint-installer__title {
+    font-size: var(--blueprint-font-size-5xl);
+  }
+}
+
+/* Progress Indicator */
+.blueprint-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--blueprint-space-xs);
+  margin-bottom: var(--blueprint-space-lg);
+}
+
+.blueprint-progress__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--blueprint-radius-full);
+  background: rgba(255, 255, 255, 0.3);
+  transition: all var(--blueprint-transition-base);
+}
+
+.blueprint-progress__dot--active {
+  background: var(--blueprint-white);
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.blueprint-progress__dot--completed {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Content Card */
+.blueprint-installer__content {
+  width: 100%;
+  max-width: 700px;
+  background: var(--blueprint-white);
+  border-radius: var(--blueprint-radius-lg);
+  padding: var(--blueprint-space-2xl) var(--blueprint-space-lg);
+  box-shadow: var(--blueprint-shadow-2xl);
+  position: relative;
+  overflow: visible;
+  margin-bottom: var(--blueprint-space-lg);
+}
+
+@media (min-width: 768px) {
+  .blueprint-installer__content {
+    padding: var(--blueprint-space-2xl) var(--blueprint-space-xl);
+  }
+}
+
+/* Curved Wave Overlay - Creates the organic shape at top */
+.blueprint-installer__content::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -10%;
+  right: -10%;
+  width: 120%;
+  height: 180px;
+  background: var(--blueprint-gradient-main);
+  border-radius: 50%;
+  transform: scaleY(0.3);
+  z-index: -1;
+}
+
+/* Main Content Area */
+.blueprint-installer__main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Page Content */
+.page-content {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide Drupal's default task list */
+.task-list {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .blueprint-installer {
+    padding: var(--blueprint-space-md);
+  }
+  
+  .blueprint-installer__header {
+    padding-top: var(--blueprint-space-md);
+    margin-bottom: var(--blueprint-space-lg);
+  }
+  
+  .blueprint-installer__title {
+    font-size: var(--blueprint-font-size-3xl);
+  }
+  
+  .blueprint-installer__content {
+    padding: var(--blueprint-space-lg) var(--blueprint-space-md);
+  }
+}

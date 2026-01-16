@@ -1,0 +1,46 @@
+name: Custom Installer
+type: profile
+core_version_requirement: '^11.1'
+description: 'Custom installation wizard with The Blueprint design. Beautiful onboarding experience.'
+
+# Use the `distribution` key to skip the installer's profile selection step.
+distribution:
+  name: The Blueprint
+  install:
+    finish_url: '/admin/dashboard'
+    theme: custom_theme
+
+forms:
+  - '\Drupal\RecipeKit\Installer\Form\RecipesForm'
+  - '\Drupal\RecipeKit\Installer\Form\SiteNameForm'
+
+recipes:
+  required:
+    - drupal/drupal_cms_starter
+  optional:
+    'Blog':
+      - drupal/drupal_cms_blog
+    'Case Studies':
+      - drupal/drupal_cms_case_study
+    'Events':
+      - drupal/drupal_cms_events
+    'News':
+      - drupal/drupal_cms_news
+    'Person Profiles':
+      - drupal/drupal_cms_person
+    'Projects':
+      - drupal/drupal_cms_project
+
+# Explicitly provide an empty list of themes.
+themes: []
+
+hide_messages:
+  # Hide confusing technical messages about translations
+  - ['One translation file imported. %number translations were added, %update translations were updated and %delete translations were removed.', '@count translation files imported. %number translations were added, %update translations were updated and %delete translations were removed.']
+  - 'The configuration was successfully updated. There are %number configuration objects updated.'
+  - 'Check <a href=":translate_status">available translations</a> for your language(s).'
+  - 'All necessary changes to %dir and %file have been made, so you should remove write permissions to them now in order to avoid security risks. If you are unsure how to do so, consult the <a href=":handbook_url">online handbook</a>.'
+  - 'Honeypot installed successfully. Please <a href=":url">configure Honeypot</a> to protect your forms from spam bots.'
+
+# The project for which to download translations from localize.drupal.org
+project: cms
