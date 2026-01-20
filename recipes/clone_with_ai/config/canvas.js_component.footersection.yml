@@ -1,0 +1,200 @@
+langcode: en
+status: true
+dependencies: {  }
+machineName: footersection
+name: FooterSection
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |
+    import { Heart } from "https://esm.sh/lucide-react?external=react,react-dom";
+
+    export default function Footer() {
+      return (
+        <footer className="py-12 bg-secondary">
+          <div className="section-container">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                  <span className="text-primary-foreground font-heading font-bold text-lg">
+                    IL
+                  </span>
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-secondary-foreground text-sm">
+                    Illinois Legal Aid Online
+                  </p>
+                  <p className="text-xs text-secondary-foreground/70">
+                    Know Your Rights
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center md:text-right">
+                <p className="text-sm text-secondary-foreground/80 mb-2">
+                  This information is for educational purposes only and does not constitute legal advice.
+                </p>
+
+                <p className="text-xs text-secondary-foreground/60 flex items-center justify-center md:justify-end gap-1">
+                  Made with{" "}
+                  <Heart className="h-3 w-3 text-primary fill-primary" /> for the community
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-secondary-foreground/10">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-secondary-foreground/70">
+                <a
+                  href="https://www.illinoislegalaid.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary-foreground transition-colors"
+                >
+                  ILAO Website
+                </a>
+                <span>•</span>
+                <a
+                  href="https://www.illinoislegalaid.org/get-legal-help"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary-foreground transition-colors"
+                >
+                  Get Legal Help
+                </a>
+                <span>•</span>
+                <a
+                  href="https://www.illinoislegalaid.org/donate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary-foreground transition-colors"
+                >
+                  Donate
+                </a>
+                <span>•</span>
+                <a
+                  href="https://www.illinoislegalaid.org/legal-information/immigrants-immigration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary-foreground transition-colors"
+                >
+                  All Immigration Info
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+  compiled: |
+    import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+    import { Heart } from "https://esm.sh/lucide-react?external=react,react-dom";
+    export default function Footer() {
+        return /*#__PURE__*/ _jsx("footer", {
+            className: "py-12 bg-secondary",
+            children: /*#__PURE__*/ _jsxs("div", {
+                className: "section-container",
+                children: [
+                    /*#__PURE__*/ _jsxs("div", {
+                        className: "flex flex-col md:flex-row items-center justify-between gap-6",
+                        children: [
+                            /*#__PURE__*/ _jsxs("div", {
+                                className: "flex items-center gap-3",
+                                children: [
+                                    /*#__PURE__*/ _jsx("div", {
+                                        className: "w-10 h-10 rounded-lg bg-primary flex items-center justify-center",
+                                        children: /*#__PURE__*/ _jsx("span", {
+                                            className: "text-primary-foreground font-heading font-bold text-lg",
+                                            children: "IL"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxs("div", {
+                                        children: [
+                                            /*#__PURE__*/ _jsx("p", {
+                                                className: "font-heading font-bold text-secondary-foreground text-sm",
+                                                children: "Illinois Legal Aid Online"
+                                            }),
+                                            /*#__PURE__*/ _jsx("p", {
+                                                className: "text-xs text-secondary-foreground/70",
+                                                children: "Know Your Rights"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxs("div", {
+                                className: "text-center md:text-right",
+                                children: [
+                                    /*#__PURE__*/ _jsx("p", {
+                                        className: "text-sm text-secondary-foreground/80 mb-2",
+                                        children: "This information is for educational purposes only and does not constitute legal advice."
+                                    }),
+                                    /*#__PURE__*/ _jsxs("p", {
+                                        className: "text-xs text-secondary-foreground/60 flex items-center justify-center md:justify-end gap-1",
+                                        children: [
+                                            "Made with",
+                                            " ",
+                                            /*#__PURE__*/ _jsx(Heart, {
+                                                className: "h-3 w-3 text-primary fill-primary"
+                                            }),
+                                            " for the community"
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsx("div", {
+                        className: "mt-8 pt-6 border-t border-secondary-foreground/10",
+                        children: /*#__PURE__*/ _jsxs("div", {
+                            className: "flex flex-wrap items-center justify-center gap-4 text-sm text-secondary-foreground/70",
+                            children: [
+                                /*#__PURE__*/ _jsx("a", {
+                                    href: "https://www.illinoislegalaid.org",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "hover:text-secondary-foreground transition-colors",
+                                    children: "ILAO Website"
+                                }),
+                                /*#__PURE__*/ _jsx("span", {
+                                    children: "•"
+                                }),
+                                /*#__PURE__*/ _jsx("a", {
+                                    href: "https://www.illinoislegalaid.org/get-legal-help",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "hover:text-secondary-foreground transition-colors",
+                                    children: "Get Legal Help"
+                                }),
+                                /*#__PURE__*/ _jsx("span", {
+                                    children: "•"
+                                }),
+                                /*#__PURE__*/ _jsx("a", {
+                                    href: "https://www.illinoislegalaid.org/donate",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "hover:text-secondary-foreground transition-colors",
+                                    children: "Donate"
+                                }),
+                                /*#__PURE__*/ _jsx("span", {
+                                    children: "•"
+                                }),
+                                /*#__PURE__*/ _jsx("a", {
+                                    href: "https://www.illinoislegalaid.org/legal-information/immigrants-immigration",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "hover:text-secondary-foreground transition-colors",
+                                    children: "All Immigration Info"
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+        });
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }

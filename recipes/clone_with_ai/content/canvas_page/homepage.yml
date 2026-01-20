@@ -1,0 +1,50 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 19966bfd-a906-4117-9f82-5e46ff67a4dd
+  default_langcode: en
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Homepage'
+  components:
+    -
+      uuid: a680b57c-4c26-4d59-831f-188cc89b348e
+      component_id: js.header
+      inputs: {  }
+    -
+      uuid: 59771b8d-3e30-424c-ac9e-1c6609243fe5
+      component_id: js.herosection
+      inputs: {  }
+    -
+      uuid: 3f559613-fdac-4a2a-9a5d-9d3f9683e75e
+      component_id: js.rightssection
+      inputs: {  }
+    -
+      uuid: 4918d64a-36cd-4a70-a737-6c55226de2f9
+      component_id: js.resourcessection
+      inputs: {  }
+    -
+      uuid: de66e872-cb76-4416-8128-f4d5f03ac9d3
+      component_id: js.ctasection
+      inputs: {  }
+    -
+      uuid: 4cd495f7-2a3b-44cf-851c-ca28e182c713
+      component_id: js.footersection
+      inputs: {  }
+  path:
+    -
+      langcode: en
+      alias: null
+  revision_translation_affected:
+    -
+      value: true

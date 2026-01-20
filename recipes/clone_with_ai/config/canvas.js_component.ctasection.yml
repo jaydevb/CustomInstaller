@@ -1,0 +1,179 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - canvas.js_component.button_2
+machineName: ctasection
+name: CTASection
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |+
+    import Button2 from '@/components/button_2'
+    import {
+      ExternalLink,
+      Phone,
+      MessageSquare,
+    } from "https://esm.sh/lucide-react?external=react,react-dom";
+
+    export default function CTASection() {
+      return (
+        <section className="py-20 gradient-hero relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+
+          <div className="section-container relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-6">
+                Need legal help? We're here for you.
+              </h2>
+
+              <p className="text-lg sm:text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto">
+                Illinois Legal Aid Online provides free legal information and connects you with attorneys who can help. Start with our online intake system.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <Button2
+                  as="a"
+                  href="https://www.illinoislegalaid.org/get-legal-help"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-14 px-10 text-lg rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]"
+                >
+                  <span className="inline-flex items-center">
+                    <MessageSquare className="mr-2 h-5 w-5" />
+                    Start Online Intake
+                  </span>
+                </Button2>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+                <div className="p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+                  <Phone className="h-8 w-8 text-primary-foreground mx-auto mb-3" />
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">
+                    National hotlines
+                  </h3>
+                  <p className="text-sm text-primary-foreground/80">
+                    USCIS: 1-800-375-5283
+                    <br />
+                    ICE Detainee: 1-888-351-4024
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+                  <ExternalLink className="h-8 w-8 text-primary-foreground mx-auto mb-3" />
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">
+                    More resources
+                  </h3>
+                  <p className="text-sm text-primary-foreground/80">
+                    Visit our full website for guides, FAQs, and local assistance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+  compiled: |
+    import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+    import Button2 from '@/components/button_2';
+    import { ExternalLink, Phone, MessageSquare } from "https://esm.sh/lucide-react?external=react,react-dom";
+    export default function CTASection() {
+        return /*#__PURE__*/ _jsxs("section", {
+            className: "py-20 gradient-hero relative overflow-hidden",
+            children: [
+                /*#__PURE__*/ _jsx("div", {
+                    className: "absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+                }),
+                /*#__PURE__*/ _jsx("div", {
+                    className: "absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+                }),
+                /*#__PURE__*/ _jsx("div", {
+                    className: "section-container relative z-10",
+                    children: /*#__PURE__*/ _jsxs("div", {
+                        className: "max-w-3xl mx-auto text-center",
+                        children: [
+                            /*#__PURE__*/ _jsx("h2", {
+                                className: "text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-6",
+                                children: "Need legal help? We're here for you."
+                            }),
+                            /*#__PURE__*/ _jsx("p", {
+                                className: "text-lg sm:text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto",
+                                children: "Illinois Legal Aid Online provides free legal information and connects you with attorneys who can help. Start with our online intake system."
+                            }),
+                            /*#__PURE__*/ _jsx("div", {
+                                className: "flex flex-col sm:flex-row items-center justify-center gap-4 mb-12",
+                                children: /*#__PURE__*/ _jsx(Button2, {
+                                    as: "a",
+                                    href: "https://www.illinoislegalaid.org/get-legal-help",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "h-14 px-10 text-lg rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]",
+                                    children: /*#__PURE__*/ _jsxs("span", {
+                                        className: "inline-flex items-center",
+                                        children: [
+                                            /*#__PURE__*/ _jsx(MessageSquare, {
+                                                className: "mr-2 h-5 w-5"
+                                            }),
+                                            "Start Online Intake"
+                                        ]
+                                    })
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxs("div", {
+                                className: "grid sm:grid-cols-2 gap-6 max-w-xl mx-auto",
+                                children: [
+                                    /*#__PURE__*/ _jsxs("div", {
+                                        className: "p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20",
+                                        children: [
+                                            /*#__PURE__*/ _jsx(Phone, {
+                                                className: "h-8 w-8 text-primary-foreground mx-auto mb-3"
+                                            }),
+                                            /*#__PURE__*/ _jsx("h3", {
+                                                className: "font-heading font-bold text-primary-foreground mb-2",
+                                                children: "National hotlines"
+                                            }),
+                                            /*#__PURE__*/ _jsxs("p", {
+                                                className: "text-sm text-primary-foreground/80",
+                                                children: [
+                                                    "USCIS: 1-800-375-5283",
+                                                    /*#__PURE__*/ _jsx("br", {}),
+                                                    "ICE Detainee: 1-888-351-4024"
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ _jsxs("div", {
+                                        className: "p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20",
+                                        children: [
+                                            /*#__PURE__*/ _jsx(ExternalLink, {
+                                                className: "h-8 w-8 text-primary-foreground mx-auto mb-3"
+                                            }),
+                                            /*#__PURE__*/ _jsx("h3", {
+                                                className: "font-heading font-bold text-primary-foreground mb-2",
+                                                children: "More resources"
+                                            }),
+                                            /*#__PURE__*/ _jsx("p", {
+                                                className: "text-sm text-primary-foreground/80",
+                                                children: "Visit our full website for guides, FAQs, and local assistance."
+                                            })
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                })
+            ]
+        });
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }
