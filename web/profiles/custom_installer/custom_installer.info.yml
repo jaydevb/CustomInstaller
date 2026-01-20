@@ -11,8 +11,11 @@ distribution:
     theme: custom_theme
 
 forms:
-  - '\Drupal\RecipeKit\Installer\Form\RecipesForm'
   - '\Drupal\RecipeKit\Installer\Form\SiteNameForm'
+  - '\Drupal\custom_installer\Form\ReferenceSiteLinkForm'
+  - '\Drupal\custom_installer\Form\ProjectMissionForm'
+  - '\Drupal\custom_installer\Form\SuccessForm'
+  - '\Drupal\custom_installer\Form\IdealVisitorForm'
 
 recipes:
   required:

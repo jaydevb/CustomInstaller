@@ -43,10 +43,10 @@ class ProjectSoulForm extends FormBase implements InstallerFormInterface {
     
     $form['#attributes']['class'][] = 'blueprint-form';
     
-    // Question label - "Question 1/5"
+    // Question label - "Question 1/6"
     $form['question_label'] = [
       '#type' => 'markup',
-      '#markup' => '<div class="blueprint-question-label">' . $this->t('Question 1/5') . '</div>',
+      '#markup' => '<div class="blueprint-question-label">' . $this->t('Question 1/6') . '</div>',
       '#weight' => -100,
     ];
     
