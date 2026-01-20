@@ -14,7 +14,7 @@ function custom_theme_preprocess_install_page(array &$variables): void {
   // Calculate current step based on install state
   $install_state = $GLOBALS['install_state'] ?? [];
   $variables['current_step'] = _custom_theme_get_current_step($install_state);
-  $variables['total_steps'] = 3; // Updated to 3 steps: Recipes, Site Name, Account
+  $variables['total_steps'] = 6; // 6 steps for 6 questions
   
   // Hide title for custom forms (we render it in the form itself)
   $active_task = $install_state['active_task'] ?? '';
@@ -34,29 +34,41 @@ function custom_theme_preprocess_install_page(array &$variables): void {
 function _custom_theme_get_current_step(array $install_state): int {
   $task = $install_state['active_task'] ?? '';
   
-  // Map installation tasks to step numbers (3 steps total)
+  // Map installation tasks to step numbers (6 steps total)
   $step_map = [
-    // Step 1: Recipe selection - "Get started"
-    'Drupal\RecipeKit\Installer\Form\RecipesForm' => 1,
-    'installer_recipes_form' => 1,
-    
-    // Step 2: Site name - "What should we call your masterpiece?"
-    'Drupal\RecipeKit\Installer\Form\SiteNameForm' => 2,
-    'installer_site_name_form' => 2,
-    
+    // Step 1: Site name - "What should we call your masterpiece?"
+    'Drupal\RecipeKit\Installer\Form\SiteNameForm' => 1,
+    'installer_site_name_form' => 1,
+
+    // Step 2: Reference site link
+    '\Drupal\custom_installer\Form\ReferenceSiteLinkForm' => 2,
+    'custom_installer_reference_site_link_form' => 2,
+
+    // Step 3: Project mission
+    '\Drupal\custom_installer\Form\ProjectMissionForm' => 3,
+    'custom_installer_project_mission_form' => 3,
+
+    // Step 4: Success metrics
+    '\Drupal\custom_installer\Form\SuccessForm' => 4,
+    'custom_installer_success_form' => 4,
+
+    // Step 5: Ideal visitor
+    '\Drupal\custom_installer\Form\IdealVisitorForm' => 5,
+    'custom_installer_ideal_visitor_form' => 5,
+
+    // Step 6: Account creation - "Create your account"
+    'install_configure_form' => 6,
+
     // Database settings (hidden/automatic)
-    'install_settings_form' => 2,
-    'install_verify_settings' => 2,
-    
-    // Step 3: Account creation - "Create your account"
-    'install_configure_form' => 3,
-    
+    'install_settings_form' => 1,
+    'install_verify_settings' => 1,
+
     // Background tasks
-    'install_verify_requirements' => 3,
-    'install_profile_modules' => 3,
-    'install_profile_themes' => 3,
-    'install_install_profile' => 3,
-    'install_finished' => 3,
+    'install_verify_requirements' => 6,
+    'install_profile_modules' => 6,
+    'install_profile_themes' => 6,
+    'install_install_profile' => 6,
+    'install_finished' => 6,
   ];
   
   return $step_map[$task] ?? 1;
@@ -116,7 +128,7 @@ function custom_theme_form_installer_site_name_form_alter(array &$form): void {
   
   $form['question_label'] = [
     '#type' => 'markup',
-    '#markup' => '<div class="blueprint-question-label">' . t('Question 2/3') . '</div>',
+    '#markup' => '<div class="blueprint-question-label">' . t('Question 1/6') . '</div>',
     '#weight' => -100,
   ];
   
@@ -150,7 +162,7 @@ function custom_theme_form_install_configure_form_alter(array &$form): void {
   // Add Blueprint question styling
   $form['help'] = [
     '#type' => 'markup',
-    '#markup' => '<p class="blueprint-question-label">' . t('Question 3/3') . '</p>' .
+    '#markup' => '<p class="blueprint-question-label">' . t('Question 6/6') . '</p>' .
                  '<h2 class="blueprint-question">' . t('Who will be the guardian of this masterpiece?') . '</h2>' .
                  '<p class="blueprint-helper-text">' . t('Create your administrator account to manage your site.') . '</p>',
     '#weight' => -40,

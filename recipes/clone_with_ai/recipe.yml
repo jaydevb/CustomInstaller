@@ -1,0 +1,14 @@
+name: Clone with AI
+type: Drupal CMS
+description: Clone content using AI-powered tools.
+recipes:
+  - drupal_cms_page
+install:
+  - canvas
+  - media
+  - canvas_stark
+config:
+  strict: false
+  import:
+    media: '*'
+    canvas: '*'
