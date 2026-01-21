@@ -5,26 +5,24 @@
 
 /* Question Label */
 .blueprint-question-label {
-  font-size: var(--blueprint-font-size-sm);
-  color: var(--blueprint-text-medium);
-  margin-bottom: var(--blueprint-space-sm);
+  font-size: 16px;
+  color: var(--blueprint-gray-900);
+  margin-bottom: 9px;
   font-weight: var(--blueprint-font-weight-medium);
+  font-family: 'Noto Sans', var(--blueprint-font-family);
+  letter-spacing: -0.368px;
+  line-height: 1.5;
   display: block;
 }
 
 /* Main Question Text */
 .blueprint-question {
-  font-size: var(--blueprint-font-size-2xl);
-  font-weight: var(--blueprint-font-weight-bold);
-  color: var(--blueprint-text-dark);
-  margin: 0 0 var(--blueprint-space-lg) 0;
-  line-height: var(--blueprint-line-height-tight);
-}
-
-@media (min-width: 768px) {
-  .blueprint-question {
-    font-size: var(--blueprint-font-size-3xl);
-  }
+  font-size: 40px !important;
+  font-weight: var(--blueprint-font-weight-medium);
+  color: var(--blueprint-gray-900);
+  margin: 0 0 48px 0;
+  line-height: 1.2;
+  font-family: 'Noto Sans', var(--blueprint-font-family);
 }
 
 /* Form Wrapper */
@@ -42,22 +40,24 @@
 .blueprint-form textarea,
 .blueprint-form select {
   width: 100%;
-  padding: var(--blueprint-space-md);
-  border: 1.5px solid var(--blueprint-border);
+  height: 70px;
+  padding: 8px 16px;
+  border: 1px solid #959595;
   border-radius: var(--blueprint-radius-md);
-  font-size: var(--blueprint-font-size-base);
-  font-family: var(--blueprint-font-family);
+  font-size: 20px;
+  font-family: 'Noto Sans', var(--blueprint-font-family);
   color: var(--blueprint-text-dark);
   background: var(--blueprint-white);
   transition: all var(--blueprint-transition-base);
-  margin-bottom: var(--blueprint-space-md);
+  margin-bottom: 0;
   outline: none;
 }
 
 .blueprint-input::placeholder,
 .blueprint-form input::placeholder,
 .blueprint-form textarea::placeholder {
-  color: var(--blueprint-text-light);
+  color: #a5a5a5;
+  font-size: 20px;
 }
 
 .blueprint-input:focus,
@@ -109,12 +109,13 @@
 }
 
 /* Actions Container */
-.blueprint-actions {
+.blueprint-actions,
+.blueprint-form .form-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: var(--blueprint-space-md);
-  margin-top: var(--blueprint-space-xl);
+  margin-top: 32px;
 }
 
 /* Buttons */
@@ -124,47 +125,50 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--blueprint-space-xs);
-  padding: var(--blueprint-space-md) var(--blueprint-space-lg);
-  background: var(--blueprint-blue);
+  gap: 8px;
+  height: 64px;
+  padding: 8px 16px;
+  background: #009cde;
   color: var(--blueprint-white);
-  border: none;
+  border: 1px solid #009cde;
   border-radius: var(--blueprint-radius-md);
-  font-size: var(--blueprint-font-size-base);
+  font-size: 20px;
   font-weight: var(--blueprint-font-weight-semibold);
-  font-family: var(--blueprint-font-family);
+  font-family: 'Noto Sans', var(--blueprint-font-family);
   cursor: pointer;
   transition: all var(--blueprint-transition-base);
   text-decoration: none;
   position: relative;
-  overflow: hidden;
 }
 
-.blueprint-button::after,
-.blueprint-form .form-actions input[type="submit"]::after {
-  content: '→';
-  margin-left: var(--blueprint-space-xs);
-  font-size: var(--blueprint-font-size-lg);
+/* Arrow icon for button - using background image for input[type="submit"] */
+.blueprint-form .form-actions input[type="submit"] {
+  padding-right: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12H19M19 12L12 5M19 12L12 19' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 24px 24px;
+}
+
+/* Arrow icon for button element */
+.blueprint-button .blueprint-button__arrow {
+  width: 24px;
+  height: 24px;
   transition: transform var(--blueprint-transition-base);
 }
 
 .blueprint-button:hover,
 .blueprint-form .form-actions input[type="submit"]:hover {
-  background: var(--blueprint-blue-hover);
-  transform: translateY(-1px);
-  box-shadow: var(--blueprint-shadow-md);
+  background-color: var(--blueprint-blue-hover);
 }
 
-.blueprint-button:hover::after,
-.blueprint-form .form-actions input[type="submit"]:hover::after {
+.blueprint-button:hover .blueprint-button__arrow {
   transform: translateX(3px);
 }
 
 .blueprint-button:active,
 .blueprint-form .form-actions input[type="submit"]:active {
-  background: var(--blueprint-blue-active);
-  transform: translateY(0);
-  box-shadow: var(--blueprint-shadow-sm);
+  background-color: var(--blueprint-blue-active);
 }
 
 .blueprint-button:focus,
@@ -178,7 +182,6 @@
   background: var(--blueprint-gray-300);
   color: var(--blueprint-gray-500);
   cursor: not-allowed;
-  transform: none;
 }
 
 /* Secondary Button */
@@ -270,4 +273,50 @@
   color: var(--blueprint-text-medium);
   margin-top: calc(var(--blueprint-space-xs) * -1);
   margin-bottom: var(--blueprint-space-md);
+}
+
+/* Back Button - Outline style with blue border */
+.blueprint-button--back {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 64px !important;
+  padding: 8px 16px !important;
+  background: var(--blueprint-white) !important;
+  color: #009cde !important;
+  border: 1px solid #009cde !important;
+  border-radius: var(--blueprint-radius-md) !important;
+  font-size: 20px !important;
+  font-weight: var(--blueprint-font-weight-semibold) !important;
+  font-family: 'Noto Sans', var(--blueprint-font-family) !important;
+  cursor: pointer !important;
+  transition: all var(--blueprint-transition-base) !important;
+  text-decoration: none !important;
+}
+
+.blueprint-button--back:hover {
+  background: rgba(0, 156, 222, 0.05) !important;
+  border-color: #0080b8 !important;
+  color: #0080b8 !important;
+}
+
+.blueprint-button--back:active {
+  background: rgba(0, 156, 222, 0.1) !important;
+}
+
+.blueprint-button--back:focus {
+  outline: 3px solid rgba(0, 168, 232, 0.3) !important;
+  outline-offset: 2px !important;
+}
+
+/* Back arrow icon */
+.blueprint-button--back .blueprint-button__arrow {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--blueprint-transition-base);
+}
+
+.blueprint-button--back:hover .blueprint-button__arrow {
+  transform: translateX(-3px);
 }

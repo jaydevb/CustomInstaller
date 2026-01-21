@@ -83,6 +83,14 @@ class ReferenceSiteLinkForm extends FormBase implements InstallerFormInterface {
       '#weight' => 100,
     ];
 
+    // Back button (visual only, no functionality)
+    $form['actions']['back'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Back'),
+      '#attributes' => ['class' => ['blueprint-button--back']],
+      '#button_type' => 'primary',
+    ];
+
     // Submit button
     $form['actions']['submit'] = [
       '#type' => 'submit',
