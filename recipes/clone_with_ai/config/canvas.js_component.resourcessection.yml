@@ -1,0 +1,264 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - canvas.js_component.button_2
+machineName: resourcessection
+name: ResourcesSection
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |
+    import Button2 from '@/components/button_2'
+
+    import {
+      FileText,
+      Users,
+      Shield,
+      Globe,
+      ExternalLink,
+    } from "https://esm.sh/lucide-react?external=react,react-dom";
+
+    const resources = [
+      {
+        icon: Shield,
+        title: "Immigration arrests & detention",
+        description:
+          "Learn about ICE enforcement, your rights during arrests, and what to expect if detained.",
+        link: "https://www.illinoislegalaid.org/legal-information/immigration-arrests-and-detention",
+        count: "12 resources",
+      },
+      {
+        icon: FileText,
+        title: "Asylum & refugee status",
+        description:
+          "Information about seeking asylum, refugee protections, and the application process.",
+        link: "https://www.illinoislegalaid.org/legal-information/asylum-and-refuge",
+        count: "6 resources",
+      },
+      {
+        icon: Users,
+        title: "DACA information",
+        description:
+          "Learn about Deferred Action for Childhood Arrivals, eligibility, and current status.",
+        link: "https://www.illinoislegalaid.org/legal-information/deferred-action-childhood-arrivals-daca-0",
+        count: "3 resources",
+      },
+      {
+        icon: Globe,
+        title: "Temporary protected status (TPS)",
+        description:
+          "Information about TPS eligibility, designated countries, and how to apply.",
+        link: "https://www.illinoislegalaid.org/legal-information/applying-temporary-protected-status-tps",
+        count: "7 resources",
+      },
+    ];
+
+    export default function ResourcesSection() {
+      return (
+        <section className="py-20 bg-muted/50">
+          <div className="section-container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-4">
+                Legal Resources
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+                Explore immigration topics
+              </h2>
+
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Access free legal guides, FAQs, and information on key immigration topics.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {resources.map((resource, index) => {
+                const Icon = resource.icon;
+
+                return (
+                  <a
+                    key={index}
+                    href={resource.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex gap-4 p-6 rounded-xl bg-card border border-border card-shadow hover:elevated-shadow transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-secondary/80 transition-colors">
+                      <Icon className="h-7 w-7 text-secondary-foreground" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3 className="text-lg font-heading font-bold text-foreground group-hover:text-primary transition-colors">
+                          {resource.title}
+                        </h3>
+
+                        <ExternalLink className="flex-shrink-0 h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+
+                      <p className="text-muted-foreground font-body mb-3 leading-relaxed">
+                        {resource.description}
+                      </p>
+
+                      <span className="inline-block px-2 py-1 rounded bg-accent text-accent-foreground text-xs font-medium">
+                        {resource.count}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-12">
+              <Button2
+                variant="outline"
+                as="a"
+                href="https://www.illinoislegalaid.org/legal-information/immigrants-immigration"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 px-8 rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+              >
+                <span className="inline-flex items-center">
+                  View all immigration resources
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </span>
+              </Button2>
+            </div>
+          </div>
+        </section>
+      );
+    }
+  compiled: |
+    import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+    import Button2 from '@/components/button_2';
+    import { FileText, Users, Shield, Globe, ExternalLink } from "https://esm.sh/lucide-react?external=react,react-dom";
+    const resources = [
+        {
+            icon: Shield,
+            title: "Immigration arrests & detention",
+            description: "Learn about ICE enforcement, your rights during arrests, and what to expect if detained.",
+            link: "https://www.illinoislegalaid.org/legal-information/immigration-arrests-and-detention",
+            count: "12 resources"
+        },
+        {
+            icon: FileText,
+            title: "Asylum & refugee status",
+            description: "Information about seeking asylum, refugee protections, and the application process.",
+            link: "https://www.illinoislegalaid.org/legal-information/asylum-and-refuge",
+            count: "6 resources"
+        },
+        {
+            icon: Users,
+            title: "DACA information",
+            description: "Learn about Deferred Action for Childhood Arrivals, eligibility, and current status.",
+            link: "https://www.illinoislegalaid.org/legal-information/deferred-action-childhood-arrivals-daca-0",
+            count: "3 resources"
+        },
+        {
+            icon: Globe,
+            title: "Temporary protected status (TPS)",
+            description: "Information about TPS eligibility, designated countries, and how to apply.",
+            link: "https://www.illinoislegalaid.org/legal-information/applying-temporary-protected-status-tps",
+            count: "7 resources"
+        }
+    ];
+    export default function ResourcesSection() {
+        return /*#__PURE__*/ _jsx("section", {
+            className: "py-20 bg-muted/50",
+            children: /*#__PURE__*/ _jsxs("div", {
+                className: "section-container",
+                children: [
+                    /*#__PURE__*/ _jsxs("div", {
+                        className: "text-center mb-16",
+                        children: [
+                            /*#__PURE__*/ _jsx("span", {
+                                className: "inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-4",
+                                children: "Legal Resources"
+                            }),
+                            /*#__PURE__*/ _jsx("h2", {
+                                className: "text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4",
+                                children: "Explore immigration topics"
+                            }),
+                            /*#__PURE__*/ _jsx("p", {
+                                className: "text-lg text-muted-foreground max-w-2xl mx-auto",
+                                children: "Access free legal guides, FAQs, and information on key immigration topics."
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsx("div", {
+                        className: "grid sm:grid-cols-2 gap-6",
+                        children: resources.map((resource, index)=>{
+                            const Icon = resource.icon;
+                            return /*#__PURE__*/ _jsxs("a", {
+                                href: resource.link,
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                                className: "group flex gap-4 p-6 rounded-xl bg-card border border-border card-shadow hover:elevated-shadow transition-all duration-300 hover:-translate-y-1",
+                                children: [
+                                    /*#__PURE__*/ _jsx("div", {
+                                        className: "flex-shrink-0 w-14 h-14 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-secondary/80 transition-colors",
+                                        children: /*#__PURE__*/ _jsx(Icon, {
+                                            className: "h-7 w-7 text-secondary-foreground"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxs("div", {
+                                        className: "flex-1 min-w-0",
+                                        children: [
+                                            /*#__PURE__*/ _jsxs("div", {
+                                                className: "flex items-start justify-between gap-2 mb-2",
+                                                children: [
+                                                    /*#__PURE__*/ _jsx("h3", {
+                                                        className: "text-lg font-heading font-bold text-foreground group-hover:text-primary transition-colors",
+                                                        children: resource.title
+                                                    }),
+                                                    /*#__PURE__*/ _jsx(ExternalLink, {
+                                                        className: "flex-shrink-0 h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ _jsx("p", {
+                                                className: "text-muted-foreground font-body mb-3 leading-relaxed",
+                                                children: resource.description
+                                            }),
+                                            /*#__PURE__*/ _jsx("span", {
+                                                className: "inline-block px-2 py-1 rounded bg-accent text-accent-foreground text-xs font-medium",
+                                                children: resource.count
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }, index);
+                        })
+                    }),
+                    /*#__PURE__*/ _jsx("div", {
+                        className: "text-center mt-12",
+                        children: /*#__PURE__*/ _jsx(Button2, {
+                            variant: "outline",
+                            as: "a",
+                            href: "https://www.illinoislegalaid.org/legal-information/immigrants-immigration",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "h-12 px-8 rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+                            children: /*#__PURE__*/ _jsxs("span", {
+                                className: "inline-flex items-center",
+                                children: [
+                                    "View all immigration resources",
+                                    /*#__PURE__*/ _jsx(ExternalLink, {
+                                        className: "ml-2 h-4 w-4"
+                                    })
+                                ]
+                            })
+                        })
+                    })
+                ]
+            })
+        });
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }

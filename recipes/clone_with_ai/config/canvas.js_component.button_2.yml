@@ -1,0 +1,167 @@
+langcode: en
+status: true
+dependencies: {  }
+machineName: button_2
+name: 'Button 2'
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |
+    import { cva } from "class-variance-authority";
+    import { cn } from "drupal-canvas";
+
+    export const buttonVariants = cva(
+      "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold font-heading ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      {
+        variants: {
+          variant: {
+            default:
+              "bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]",
+            destructive:
+              "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+            outline:
+              "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+            secondary:
+              "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+            ghost: "hover:bg-accent hover:text-accent-foreground",
+            link: "text-primary underline-offset-4 hover:underline",
+            hero: "bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02] text-base",
+            heroOutline:
+              "border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 text-base",
+            quickExit:
+              "bg-destructive text-destructive-foreground hover:bg-destructive/90 font-bold uppercase tracking-wide",
+          },
+          size: {
+            default: "h-10 px-4 py-2",
+            sm: "h-9 rounded-md px-3",
+            lg: "h-12 rounded-lg px-8",
+            xl: "h-14 rounded-lg px-10 text-lg",
+            icon: "h-10 w-10",
+          },
+        },
+        defaultVariants: {
+          variant: "default",
+          size: "default",
+        },
+      }
+    );
+
+    export default function Button({
+      className = "",
+      variant = "default",
+      size = "default",
+      as: Comp = "button",
+      ...props
+    }) {
+      return (
+        <Comp
+          className={cn(buttonVariants({ variant, size }), className)}
+          {...props}
+        />
+      );
+    }
+  compiled: |
+    function _define_property(obj, key, value) {
+        if (key in obj) {
+            Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            });
+        } else {
+            obj[key] = value;
+        }
+        return obj;
+    }
+    function _object_spread(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i] != null ? arguments[i] : {};
+            var ownKeys = Object.keys(source);
+            if (typeof Object.getOwnPropertySymbols === "function") {
+                ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+                    return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+                }));
+            }
+            ownKeys.forEach(function(key) {
+                _define_property(target, key, source[key]);
+            });
+        }
+        return target;
+    }
+    function _object_without_properties(source, excluded) {
+        if (source == null) return {};
+        var target = _object_without_properties_loose(source, excluded);
+        var key, i;
+        if (Object.getOwnPropertySymbols) {
+            var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+            for(i = 0; i < sourceSymbolKeys.length; i++){
+                key = sourceSymbolKeys[i];
+                if (excluded.indexOf(key) >= 0) continue;
+                if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+                target[key] = source[key];
+            }
+        }
+        return target;
+    }
+    function _object_without_properties_loose(source, excluded) {
+        if (source == null) return {};
+        var target = {};
+        var sourceKeys = Object.keys(source);
+        var key, i;
+        for(i = 0; i < sourceKeys.length; i++){
+            key = sourceKeys[i];
+            if (excluded.indexOf(key) >= 0) continue;
+            target[key] = source[key];
+        }
+        return target;
+    }
+    import { jsx as _jsx } from "react/jsx-runtime";
+    import { cva } from "class-variance-authority";
+    import { cn } from "drupal-canvas";
+    export const buttonVariants = cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold font-heading ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
+        variants: {
+            variant: {
+                default: "bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]",
+                destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+                outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+                secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+                ghost: "hover:bg-accent hover:text-accent-foreground",
+                link: "text-primary underline-offset-4 hover:underline",
+                hero: "bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02] text-base",
+                heroOutline: "border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10 text-base",
+                quickExit: "bg-destructive text-destructive-foreground hover:bg-destructive/90 font-bold uppercase tracking-wide"
+            },
+            size: {
+                default: "h-10 px-4 py-2",
+                sm: "h-9 rounded-md px-3",
+                lg: "h-12 rounded-lg px-8",
+                xl: "h-14 rounded-lg px-10 text-lg",
+                icon: "h-10 w-10"
+            }
+        },
+        defaultVariants: {
+            variant: "default",
+            size: "default"
+        }
+    });
+    export default function Button(_param) {
+        var { className = "", variant = "default", size = "default", as: Comp = "button" } = _param, props = _object_without_properties(_param, [
+            "className",
+            "variant",
+            "size",
+            "as"
+        ]);
+        return /*#__PURE__*/ _jsx(Comp, _object_spread({
+            className: cn(buttonVariants({
+                variant,
+                size
+            }), className)
+        }, props));
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }

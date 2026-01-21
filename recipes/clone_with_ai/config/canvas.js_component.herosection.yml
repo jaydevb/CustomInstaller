@@ -1,0 +1,216 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    config:
+      - canvas.js_component.button_2
+machineName: herosection
+name: HeroSection
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |
+    import { Shield, ExternalLink } from "https://esm.sh/lucide-react?external=react,react-dom";
+    import Button2 from '@/components/button_2'
+
+    export default function HeroSection() {
+      return (
+        <section className="relative min-h-[85vh] flex items-center gradient-hero overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            />
+          </div>
+
+          <div className="relative z-10 w-full pt-24 pb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground mb-8 animate-fade-in">
+                  <Shield className="h-4 w-4" />
+                  <span className="text-sm font-medium">
+                    Free Legal Information for Immigrants
+                  </span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 animate-fade-up text-balance">
+                  Know Your Rights as an Immigrant in Illinois
+                </h1>
+
+                <p
+                  className="text-lg sm:text-xl text-primary-foreground/90 mb-10 animate-fade-up font-body max-w-2xl mx-auto"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  Understanding your legal rights is essential. Whether you're facing enforcement,
+                  seeking protection, or need help navigating the system — we're here for you.
+                </p>
+
+                <div
+                  className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  {/* Primary CTA (hero) */}
+                  <Button2
+                    as="a"
+                    href="https://www.illinoislegalaid.org/get-legal-help"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-14 px-10 text-lg rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]"
+                  >
+                    <span className="inline-flex items-center">
+                      Get Free Legal Help
+                      <ExternalLink className="ml-2 h-5 w-5" />
+                    </span>
+                  </Button2>
+
+                  {/* Secondary CTA (heroOutline) */}
+                  <Button2
+                    as="a"
+                    href="#rights"
+                    className="h-14 px-10 text-lg rounded-lg border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+                  >
+                    Learn Your Rights
+                  </Button2>
+                </div>
+
+                <p
+                  className="mt-8 text-sm text-primary-foreground/70 animate-fade-in"
+                  style={{ animationDelay: "0.3s" }}
+                >
+                  This information is for educational purposes and is not legal advice.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom wave */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg
+              viewBox="0 0 1440 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-auto"
+            >
+              <path
+                d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                fill="var(--color-background)"
+              />
+            </svg>
+          </div>
+        </section>
+      );
+    }
+  compiled: |
+    import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+    import { Shield, ExternalLink } from "https://esm.sh/lucide-react?external=react,react-dom";
+    import Button2 from '@/components/button_2';
+    export default function HeroSection() {
+        return /*#__PURE__*/ _jsxs("section", {
+            className: "relative min-h-[85vh] flex items-center gradient-hero overflow-hidden",
+            children: [
+                /*#__PURE__*/ _jsx("div", {
+                    className: "absolute inset-0 opacity-5",
+                    children: /*#__PURE__*/ _jsx("div", {
+                        className: "absolute inset-0",
+                        style: {
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                        }
+                    })
+                }),
+                /*#__PURE__*/ _jsx("div", {
+                    className: "relative z-10 w-full pt-24 pb-16",
+                    children: /*#__PURE__*/ _jsx("div", {
+                        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+                        children: /*#__PURE__*/ _jsxs("div", {
+                            className: "max-w-3xl mx-auto text-center",
+                            children: [
+                                /*#__PURE__*/ _jsxs("div", {
+                                    className: "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground mb-8 animate-fade-in",
+                                    children: [
+                                        /*#__PURE__*/ _jsx(Shield, {
+                                            className: "h-4 w-4"
+                                        }),
+                                        /*#__PURE__*/ _jsx("span", {
+                                            className: "text-sm font-medium",
+                                            children: "Free Legal Information for Immigrants"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ _jsx("h1", {
+                                    className: "text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 animate-fade-up text-balance",
+                                    children: "Know Your Rights as an Immigrant in Illinois"
+                                }),
+                                /*#__PURE__*/ _jsx("p", {
+                                    className: "text-lg sm:text-xl text-primary-foreground/90 mb-10 animate-fade-up font-body max-w-2xl mx-auto",
+                                    style: {
+                                        animationDelay: "0.1s"
+                                    },
+                                    children: "Understanding your legal rights is essential. Whether you're facing enforcement, seeking protection, or need help navigating the system — we're here for you."
+                                }),
+                                /*#__PURE__*/ _jsxs("div", {
+                                    className: "flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up",
+                                    style: {
+                                        animationDelay: "0.2s"
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ _jsx(Button2, {
+                                            as: "a",
+                                            href: "https://www.illinoislegalaid.org/get-legal-help",
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "h-14 px-10 text-lg rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 button-shadow hover:scale-[1.02]",
+                                            children: /*#__PURE__*/ _jsxs("span", {
+                                                className: "inline-flex items-center",
+                                                children: [
+                                                    "Get Free Legal Help",
+                                                    /*#__PURE__*/ _jsx(ExternalLink, {
+                                                        className: "ml-2 h-5 w-5"
+                                                    })
+                                                ]
+                                            })
+                                        }),
+                                        /*#__PURE__*/ _jsx(Button2, {
+                                            as: "a",
+                                            href: "#rights",
+                                            className: "h-14 px-10 text-lg rounded-lg border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/10",
+                                            children: "Learn Your Rights"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ _jsx("p", {
+                                    className: "mt-8 text-sm text-primary-foreground/70 animate-fade-in",
+                                    style: {
+                                        animationDelay: "0.3s"
+                                    },
+                                    children: "This information is for educational purposes and is not legal advice."
+                                })
+                            ]
+                        })
+                    })
+                }),
+                /*#__PURE__*/ _jsx("div", {
+                    className: "absolute bottom-0 left-0 right-0",
+                    children: /*#__PURE__*/ _jsx("svg", {
+                        viewBox: "0 0 1440 120",
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        className: "w-full h-auto",
+                        children: /*#__PURE__*/ _jsx("path", {
+                            d: "M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z",
+                            fill: "var(--color-background)"
+                        })
+                    })
+                })
+            ]
+        });
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }

@@ -1,0 +1,197 @@
+langcode: en
+status: true
+dependencies: {  }
+machineName: rightssection
+name: RightsSection
+required: {  }
+props: {  }
+slots: {  }
+js:
+  original: |
+    import {
+      Shield,
+      Home,
+      Car,
+      Briefcase,
+      AlertTriangle,
+      Users,
+    } from "https://esm.sh/lucide-react?external=react,react-dom";
+
+    const rights = [
+      {
+        icon: Shield,
+        title: "Right to remain silent",
+        description:
+          "You have the right to remain silent and do not have to discuss your immigration status with police, immigration agents, or other officials.",
+      },
+      {
+        icon: Home,
+        title: "Right to refuse entry",
+        description:
+          "You have the right to refuse to let immigration officers into your home unless they have a valid warrant signed by a judge.",
+      },
+      {
+        icon: AlertTriangle,
+        title: "Right to an attorney",
+        description:
+          "If you are detained, you have the right to contact a lawyer. You may also have the right to a hearing before an immigration judge.",
+      },
+      {
+        icon: Briefcase,
+        title: "Workplace rights",
+        description:
+          "During a workplace raid, you have the right to remain silent, refuse to sign documents, and ask for a lawyer.",
+      },
+      {
+        icon: Car,
+        title: "Traffic stop rights",
+        description:
+          "During a traffic stop, you must show license and registration. You do not have to answer questions about your immigration status.",
+      },
+      {
+        icon: Users,
+        title: "Family separation",
+        description:
+          "If detained, you can arrange care for your children and have the right to call your consulate for assistance.",
+      },
+    ];
+
+    export default function RightsSection() {
+      return (
+        <section id="rights" className="py-20 bg-background">
+          <div className="section-container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4">
+                Your Rights
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+                Know your constitutional rights
+              </h2>
+
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Everyone in the United States has certain rights, regardless of immigration status. Here's what you need to know.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {rights.map((right, index) => {
+                const Icon = right.icon;
+
+                return (
+                  <div
+                    key={index}
+                    className="group p-6 rounded-xl bg-card border border-border card-shadow hover:elevated-shadow transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+
+                    <h3 className="text-lg font-heading font-bold text-foreground mb-2">
+                      {right.title}
+                    </h3>
+
+                    <p className="text-muted-foreground font-body leading-relaxed">
+                      {right.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      );
+    }
+  compiled: |
+    import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+    import { Shield, Home, Car, Briefcase, AlertTriangle, Users } from "https://esm.sh/lucide-react?external=react,react-dom";
+    const rights = [
+        {
+            icon: Shield,
+            title: "Right to remain silent",
+            description: "You have the right to remain silent and do not have to discuss your immigration status with police, immigration agents, or other officials."
+        },
+        {
+            icon: Home,
+            title: "Right to refuse entry",
+            description: "You have the right to refuse to let immigration officers into your home unless they have a valid warrant signed by a judge."
+        },
+        {
+            icon: AlertTriangle,
+            title: "Right to an attorney",
+            description: "If you are detained, you have the right to contact a lawyer. You may also have the right to a hearing before an immigration judge."
+        },
+        {
+            icon: Briefcase,
+            title: "Workplace rights",
+            description: "During a workplace raid, you have the right to remain silent, refuse to sign documents, and ask for a lawyer."
+        },
+        {
+            icon: Car,
+            title: "Traffic stop rights",
+            description: "During a traffic stop, you must show license and registration. You do not have to answer questions about your immigration status."
+        },
+        {
+            icon: Users,
+            title: "Family separation",
+            description: "If detained, you can arrange care for your children and have the right to call your consulate for assistance."
+        }
+    ];
+    export default function RightsSection() {
+        return /*#__PURE__*/ _jsx("section", {
+            id: "rights",
+            className: "py-20 bg-background",
+            children: /*#__PURE__*/ _jsxs("div", {
+                className: "section-container",
+                children: [
+                    /*#__PURE__*/ _jsxs("div", {
+                        className: "text-center mb-16",
+                        children: [
+                            /*#__PURE__*/ _jsx("span", {
+                                className: "inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4",
+                                children: "Your Rights"
+                            }),
+                            /*#__PURE__*/ _jsx("h2", {
+                                className: "text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4",
+                                children: "Know your constitutional rights"
+                            }),
+                            /*#__PURE__*/ _jsx("p", {
+                                className: "text-lg text-muted-foreground max-w-2xl mx-auto",
+                                children: "Everyone in the United States has certain rights, regardless of immigration status. Here's what you need to know."
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsx("div", {
+                        className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6",
+                        children: rights.map((right, index)=>{
+                            const Icon = right.icon;
+                            return /*#__PURE__*/ _jsxs("div", {
+                                className: "group p-6 rounded-xl bg-card border border-border card-shadow hover:elevated-shadow transition-all duration-300 hover:-translate-y-1",
+                                children: [
+                                    /*#__PURE__*/ _jsx("div", {
+                                        className: "w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors",
+                                        children: /*#__PURE__*/ _jsx(Icon, {
+                                            className: "h-6 w-6 text-primary"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsx("h3", {
+                                        className: "text-lg font-heading font-bold text-foreground mb-2",
+                                        children: right.title
+                                    }),
+                                    /*#__PURE__*/ _jsx("p", {
+                                        className: "text-muted-foreground font-body leading-relaxed",
+                                        children: right.description
+                                    })
+                                ]
+                            }, index);
+                        })
+                    })
+                ]
+            })
+        });
+    }
+css:
+  original: ''
+  compiled: |
+    /*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+dataDependencies: {  }
