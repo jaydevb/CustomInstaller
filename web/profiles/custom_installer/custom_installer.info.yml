@@ -7,7 +7,7 @@ description: 'Custom installation wizard with The Blueprint design. Beautiful on
 distribution:
   name: Drupal
   install:
-    finish_url: '/admin/content/pages'
+    finish_url: '/page/1'
     theme: custom_theme
 
 forms:
