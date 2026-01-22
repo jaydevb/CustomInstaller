@@ -68,10 +68,8 @@ class IdealVisitorForm extends FormBase implements InstallerFormInterface {
     $form['add_ons'] = [
       '#type' => 'checkboxes',
       '#options' => [
-        'capture_leads' => $this->t('Capture Leads'),
-        'make_sale' => $this->t('Make a Sale'),
-        'build_awareness' => $this->t('Build Awareness'),
-        'join_community' => $this->t('Join a Community'),
+        'immigrants_seeking_legal_guidance' => $this->t('Immigrants Seeking Legal Guidance'),
+        'immigrants_seeking_to_understand_their_legal_rights' => $this->t('Immigrants Seeking to Understand Their Legal Rights'),
       ],
       '#prefix' => '<div class="cms-installer__form-group">',
       '#suffix' => '</div>',

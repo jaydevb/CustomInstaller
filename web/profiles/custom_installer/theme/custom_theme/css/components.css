@@ -297,7 +297,7 @@ select.blueprint-select {
   height: 20px;
   margin-right: var(--blueprint-space-sm);
   cursor: pointer;
-  accent-color: var(--blueprint-blue);
+  accent-color: #008692;
 }
 
 /* Helper Text / Subheading */
@@ -335,13 +335,13 @@ select.blueprint-select {
 }
 
 .blueprint-button--back:hover {
-  background: rgba(0, 156, 222, 0.05) !important;
+  background-color: rgba(0, 156, 222, 0.05) !important;
   border-color: #0080b8 !important;
   color: #0080b8 !important;
 }
 
 .blueprint-button--back:active {
-  background: rgba(0, 156, 222, 0.1) !important;
+  background-color: rgba(0, 156, 222, 0.1) !important;
 }
 
 .blueprint-button--back:focus {

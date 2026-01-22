@@ -5,6 +5,8 @@ blueprint:
       css/layout.css: { weight: -9 }
       css/components.css: { weight: -8 }
       css/add-ons.css: { weight: -7 }
+  js:
+    js/back-button.js: {}
   dependencies:
     - core/once
 

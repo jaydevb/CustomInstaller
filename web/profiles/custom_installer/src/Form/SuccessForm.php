@@ -68,8 +68,7 @@ class SuccessForm extends FormBase implements InstallerFormInterface {
     $form['add_ons'] = [
       '#type' => 'checkboxes',
       '#options' => [
-        'capture_leads' => $this->t('Capture Leads'),
-        'make_sale' => $this->t('Make a Sale'),
+        'case_intake' => $this->t('Case Intake'),
         'build_awareness' => $this->t('Build Awareness'),
         'join_community' => $this->t('Join a Community'),
       ],

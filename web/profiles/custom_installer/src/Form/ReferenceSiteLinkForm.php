@@ -87,6 +87,7 @@ class ReferenceSiteLinkForm extends FormBase implements InstallerFormInterface {
         'anthropic' => $this->t('Anthropic'),
         'google' => $this->t('Google Gemini'),
         'cohere' => $this->t('Cohere'),
+        'self_hosted' => $this->t('Self hosted'),
       ],
       '#required' => TRUE,
       '#attributes' => [
@@ -171,6 +172,46 @@ class ReferenceSiteLinkForm extends FormBase implements InstallerFormInterface {
         ],
         'required' => [
           ':input[name="ai_provider"]' => ['value' => 'cohere'],
+        ],
+      ],
+    ];
+
+    // Self hosted base URL field
+    $form['self_hosted_base_url'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Base URL'),
+      '#attributes' => [
+        'placeholder' => $this->t('https://your-server.com/v1'),
+        'class' => ['blueprint-input'],
+        'autocomplete' => 'off',
+      ],
+      '#weight' => -70,
+      '#states' => [
+        'visible' => [
+          ':input[name="ai_provider"]' => ['value' => 'self_hosted'],
+        ],
+        'required' => [
+          ':input[name="ai_provider"]' => ['value' => 'self_hosted'],
+        ],
+      ],
+    ];
+
+    // Self hosted API key field
+    $form['self_hosted_api_key'] = [
+      '#type' => 'password',
+      '#title' => $this->t('API key'),
+      '#attributes' => [
+        'placeholder' => $this->t('Enter your API key'),
+        'class' => ['blueprint-input'],
+        'autocomplete' => 'off',
+      ],
+      '#weight' => -69,
+      '#states' => [
+        'visible' => [
+          ':input[name="ai_provider"]' => ['value' => 'self_hosted'],
+        ],
+        'required' => [
+          ':input[name="ai_provider"]' => ['value' => 'self_hosted'],
         ],
       ],
     ];

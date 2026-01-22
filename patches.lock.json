@@ -1,0 +1,17 @@
+{
+    "_hash": "2eca854494007d699dfc20f7344da8f63af93728a30165b2c5c4cd06eb7fc3f3",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "Flush caches before redirect after installation",
+                "url": "patches/core/drupal-core-flush-caches-before-redirect.patch",
+                "sha256": "b865c48ca48ce5ac84a65d787907fd3d7f7f5beb727d43659b77537056da9884",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+diff --git a/core/includes/install.core.inc b/core/includes/install.core.inc
+index 4aa16abce56..28098ef5551 100644
+--- a/core/includes/install.core.inc
++++ b/core/includes/install.core.inc
+@@ -166,6 +166,7 @@ function install_drupal($class_loader, $settings = [], ?callable $callback = NUL
+       if (isset($install_state['profile_info']['distribution']['install']['finish_url'])) {
+         $finish_url = $install_state['profile_info']['distribution']['install']['finish_url'];
+       }
++      drupal_flush_all_caches();
+       install_goto($finish_url);
+     }
+   }

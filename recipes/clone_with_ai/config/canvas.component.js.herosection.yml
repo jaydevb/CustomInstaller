@@ -3,9 +3,94 @@ status: true
 dependencies:
   config:
     - canvas.js_component.herosection
-active_version: 8fe3be948e0194e1
+active_version: c529a7c518b58a41
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        badgeText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Free Legal Information for Immigrants'
+          expression: ℹ︎string␟value
+        headingText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Know Your Rights as an Immigrant in Illinois'
+          expression: ℹ︎string␟value
+        descriptionText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Understanding your legal rights is essential. Whether you're facing enforcement, seeking protection, or need help navigating the system — we're here for you."
+          expression: ℹ︎string␟value
+        primaryCtaText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Get Free Legal Help'
+          expression: ℹ︎string␟value
+        primaryCtaHref:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'https://www.illinoislegalaid.org/get-legal-help'
+          expression: ℹ︎string␟value
+        secondaryCtaText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Learn Your Rights'
+          expression: ℹ︎string␟value
+        secondaryCtaHref:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'https://www.illinoislegalaid.org/get-legal-help'
+          expression: ℹ︎string␟value
+        disclaimerText:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'This information is for educational purposes and is not legal advice.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  8fe3be948e0194e1:
     settings:
       prop_field_definitions: {  }
     fallback_metadata:
@@ -15,4 +100,3 @@ id: js.herosection
 provider: null
 source: js
 source_local_id: herosection
-category: null

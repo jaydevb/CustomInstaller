@@ -90,9 +90,18 @@ body.install-page {
   font-size: 64px !important;
   font-weight: var(--blueprint-font-weight-medium);
   color: var(--blueprint-white);
-  margin: 32px 0 32px 0;
+  margin: 32px 0 8px 0;
   letter-spacing: -2.208px;
-  line-height: 1.5;
+  line-height: 1.2;
+  font-family: 'Inter', var(--blueprint-font-family);
+}
+
+.blueprint-installer__subtitle {
+  font-size: 30px;
+  font-weight: var(--blueprint-font-weight-normal);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px 0;
+  letter-spacing: 0.5px;
   font-family: 'Inter', var(--blueprint-font-family);
 }
 
@@ -208,8 +217,13 @@ body.install-page {
 
   .blueprint-installer__title {
     font-size: 48px !important;
-    margin: 40px 0 40px 0;
+    margin: 40px 0 8px 0;
     letter-spacing: -1.1px;
+  }
+
+  .blueprint-installer__subtitle {
+    font-size: 16px;
+    margin: 0 0 32px 0;
   }
 
   .blueprint-installer__content {
