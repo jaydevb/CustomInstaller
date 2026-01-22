@@ -11,24 +11,43 @@
  */
 #}
 <div class="blueprint-installer">
-  <header class="blueprint-installer__header">
-    <h1 class="blueprint-installer__title">{{ 'The Blueprint'|t }}</h1>
-    
-    {# Progress Indicator - 3 dots #}
-    <div class="blueprint-progress" role="progressbar" aria-label="{{ 'Installation progress'|t }}">
-      {% set current = current_step|default(1) %}
-      {% set total = total_steps|default(3) %}
-      
-      {% for i in 1..total %}
-        <div class="blueprint-progress__dot 
-          {{ current == i ? 'blueprint-progress__dot--active' : '' }}
-          {{ current > i ? 'blueprint-progress__dot--completed' : '' }}"
-          aria-label="{{ 'Step @step of @total'|t({'@step': i, '@total': total}) }}">
-        </div>
-      {% endfor %}
-    </div>
-  </header>
+  {# Header section with gradient background #}
+  <div class="blueprint-header">
+    <header class="blueprint-installer__header">
+      {# Progress Indicator - step number with dots #}
+      <div class="blueprint-progress" role="progressbar" aria-label="{{ 'Installation progress'|t }}">
+        {% set current = current_step|default(1) %}
+        {% set total = total_steps|default(4) %}
 
+        <div class="blueprint-progress__dots">
+          {% for i in 1..total %}
+            <div class="blueprint-progress__dot-wrapper">
+              {% if current == i %}
+                <div class="blueprint-progress__step-number">{{ current }}</div>
+              {% else %}
+                <div class="blueprint-progress__dot
+                  {{ current > i ? 'blueprint-progress__dot--completed' : '' }}"
+                  aria-label="{{ 'Step @step of @total'|t({'@step': i, '@total': total}) }}">
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <h1 class="blueprint-installer__title">{{ 'Legal Aid CMS'|t }}</h1>
+      <p class="blueprint-installer__subtitle">{{ 'The Blueprint'|t }}</p>
+    </header>
+
+    {# Arch SVG at bottom of header - using circle from Figma with adjusted viewBox for subtle curve #}
+    <div class="blueprint-header__arch" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <circle cx="720" cy="4350" r="4350" fill="#D6D3CD"/>
+      </svg>
+    </div>
+  </div>
+
+  {# Content section - white background #}
   <div class="blueprint-installer__content">
     <main class="blueprint-installer__main" role="main">
       

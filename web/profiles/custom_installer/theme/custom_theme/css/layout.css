@@ -19,8 +19,19 @@ body.install-page {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--blueprint-gradient-main);
-  font-family: var(--blueprint-font-family);
+  background: #D6D3CD;
+  font-family: var(--blueprint-font-family-sans);
+  color: var(--blueprint-text-dark);
+  line-height: var(--blueprint-line-height-normal);
+  border: none;
+}
+
+body.install-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #D6D3CD;
+  font-family: var(--blueprint-font-family-sans);
   color: var(--blueprint-text-dark);
   line-height: var(--blueprint-line-height-normal);
   border: none;
@@ -39,8 +50,31 @@ body.install-page {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--blueprint-space-lg);
   position: relative;
+}
+
+/* Header Section */
+.blueprint-header {
+  width: 100%;
+  background-color: #008692;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 0 0;
+  position: relative;
+}
+
+/* Arch SVG at bottom of header */
+.blueprint-header__arch {
+  width: 100%;
+  line-height: 0;
+  margin-top: auto;
+}
+
+.blueprint-header__arch svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Header Section */
@@ -48,22 +82,32 @@ body.install-page {
   width: 100%;
   max-width: 700px;
   text-align: center;
-  margin-bottom: var(--blueprint-space-xl);
-  padding-top: var(--blueprint-space-lg);
+  margin-bottom: 0;
+  padding: 0 var(--blueprint-space-lg);
 }
 
 .blueprint-installer__title {
-  font-size: var(--blueprint-font-size-4xl);
-  font-weight: var(--blueprint-font-weight-bold);
+  font-size: 64px !important;
+  font-weight: var(--blueprint-font-weight-medium);
   color: var(--blueprint-white);
-  margin: 0 0 var(--blueprint-space-lg) 0;
-  letter-spacing: -0.02em;
+  margin: 32px 0 8px 0;
+  letter-spacing: -2.208px;
+  line-height: 1.2;
+  font-family: var(--blueprint-font-family-serif);
 }
 
-@media (min-width: 768px) {
-  .blueprint-installer__title {
-    font-size: var(--blueprint-font-size-5xl);
-  }
+.blueprint-installer__subtitle {
+  font-size: 30px;
+  font-weight: var(--blueprint-font-weight-normal);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px 0;
+  letter-spacing: 0.5px;
+  font-family: var(--blueprint-font-family-serif);
+}
+
+/* Override Claro's install-page h1/h2 size restriction */
+.install-page .blueprint-installer h1.blueprint-installer__title {
+  font-size: 64px;
 }
 
 /* Progress Indicator */
@@ -71,36 +115,68 @@ body.install-page {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
+}
+
+.blueprint-progress__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--blueprint-space-xs);
-  margin-bottom: var(--blueprint-space-lg);
+}
+
+.blueprint-progress__dot-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.blueprint-progress__step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--blueprint-radius-xl);
+  background: var(--blueprint-gray-900);
+  color: var(--blueprint-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: var(--blueprint-font-weight-bold);
+  font-family: var(--blueprint-font-family-sans);
+  animation: stepNumberAppear 0.3s ease-out;
+}
+
+@keyframes stepNumberAppear {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .blueprint-progress__dot {
-  width: 12px;
-  height: 12px;
-  border-radius: var(--blueprint-radius-full);
-  background: rgba(255, 255, 255, 0.3);
-  transition: all var(--blueprint-transition-base);
-}
-
-.blueprint-progress__dot--active {
-  background: var(--blueprint-white);
-  transform: scale(1.2);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  border-radius: var(--blueprint-radius-md);
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
 }
 
 .blueprint-progress__dot--completed {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* Content Card */
+/* Content Section */
 .blueprint-installer__content {
   width: 100%;
-  max-width: 700px;
-  background: var(--blueprint-white);
-  border-radius: var(--blueprint-radius-lg);
-  padding: var(--blueprint-space-2xl) var(--blueprint-space-lg);
-  box-shadow: var(--blueprint-shadow-2xl);
+  max-width: 814px;
+  background: #D6D3CD;
+  padding: var(--blueprint-space-md) var(--blueprint-space-lg);
   position: relative;
   overflow: visible;
   margin-bottom: var(--blueprint-space-lg);
@@ -108,23 +184,8 @@ body.install-page {
 
 @media (min-width: 768px) {
   .blueprint-installer__content {
-    padding: var(--blueprint-space-2xl) var(--blueprint-space-xl);
+    padding: var(--blueprint-space-md) var(--blueprint-space-xl);
   }
-}
-
-/* Curved Wave Overlay - Creates the organic shape at top */
-.blueprint-installer__content::before {
-  content: '';
-  position: absolute;
-  top: -80px;
-  left: -10%;
-  right: -10%;
-  width: 120%;
-  height: 180px;
-  background: var(--blueprint-gradient-main);
-  border-radius: 50%;
-  transform: scaleY(0.3);
-  z-index: -1;
 }
 
 /* Main Content Area */
@@ -146,20 +207,27 @@ body.install-page {
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
-  .blueprint-installer {
-    padding: var(--blueprint-space-md);
+  .blueprint-header {
+    padding: 32px 0 0 0;
   }
-  
+
   .blueprint-installer__header {
-    padding-top: var(--blueprint-space-md);
-    margin-bottom: var(--blueprint-space-lg);
+    padding: 0 var(--blueprint-space-md);
   }
-  
+
   .blueprint-installer__title {
-    font-size: var(--blueprint-font-size-3xl);
+    font-size: 48px !important;
+    margin: 40px 0 8px 0;
+    letter-spacing: -1.1px;
   }
-  
+
+  .blueprint-installer__subtitle {
+    font-size: 16px;
+    margin: 0 0 32px 0;
+  }
+
   .blueprint-installer__content {
     padding: var(--blueprint-space-lg) var(--blueprint-space-md);
   }
 }
+

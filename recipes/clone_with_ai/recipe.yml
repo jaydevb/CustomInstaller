@@ -16,7 +16,3 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: stark
-    system.performance:
-      simpleConfigUpdate:
-        css.preprocess: false
-        js.preprocess: false

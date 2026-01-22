@@ -8,17 +8,16 @@
   margin: var(--blueprint-space-lg) 0;
 }
 
-/* Add-ons container */
+/* Add-ons container - 3 items per row with 48px gap */
 #edit-add-ons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--blueprint-space-md);
-  padding-block: 1px;
-  margin: var(--blueprint-space-lg) 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--blueprint-space-xl);
+  margin: 0;
 }
 
 #edit-add-ons .form-item {
-  display: inline-block;
+  display: block;
   margin: 0;
   position: relative;
 }
@@ -33,70 +32,70 @@
   word-wrap: normal;
 }
 
-/* Style the label as a button */
+/* Style the label as a rectangular box */
 #edit-add-ons label {
-  display: inline-block;
-  border: 1.5px solid var(--blueprint-border);
-  font-size: var(--blueprint-font-size-base);
-  padding: var(--blueprint-space-md) var(--blueprint-space-lg);
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border: 1px solid #959595;
+  font-size: 20px;
+  padding: 8px 16px;
   border-radius: var(--blueprint-radius-md);
-  font-weight: var(--blueprint-font-weight-semibold);
-  line-height: 1;
+  font-weight: var(--blueprint-font-weight-normal);
+  font-family: var(--blueprint-font-family-sans);
+  line-height: normal;
   user-select: none;
   margin: 0;
   cursor: pointer;
   transition: all var(--blueprint-transition-base);
   background: var(--blueprint-white);
-  color: var(--blueprint-text-dark);
+  color: black;
+  position: relative;
 }
 
 #edit-add-ons label:hover {
-  color: var(--blueprint-blue);
   border-color: var(--blueprint-blue);
-  transform: translateY(-1px);
-  box-shadow: var(--blueprint-shadow-sm);
 }
 
-/* Checked state */
+/* Checked state - keep text black, no background change */
 #edit-add-ons :checked + label {
-  position: relative;
-  border-color: var(--blueprint-blue);
-  color: var(--blueprint-blue);
-  background: rgba(0, 168, 232, 0.05);
+  border-color: #959595;
+  color: black;
+  background: var(--blueprint-white);
 }
 
-/* Checkmark icon for checked items */
-#edit-add-ons :checked + label:before {
+/* Checkmark icon for checked items - positioned at top right */
+#edit-add-ons :checked + label:after {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  transform: translate(-50%, -50%);
-  content: "✓";
-  background-color: var(--blueprint-blue);
-  color: var(--blueprint-white);
+  width: 46px;
+  height: 46px;
+  transform: translate(50%, -50%);
+  content: "";
+  background-color: #008692;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 6L9 17L4 12' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
   border-radius: var(--blueprint-radius-full);
-  font-size: var(--blueprint-font-size-xs);
-  font-weight: var(--blueprint-font-weight-bold);
   box-shadow: var(--blueprint-shadow-sm);
 }
 
 /* RTL support */
-[dir="rtl"] #edit-add-ons :checked + label:before {
-  left: auto;
-  right: 0;
-  transform: translate(50%, -50%);
+[dir="rtl"] #edit-add-ons :checked + label:after {
+  right: auto;
+  left: 0;
+  transform: translate(-50%, -50%);
 }
 
 /* Focus state for accessibility */
 #edit-add-ons [type="checkbox"]:focus + label {
-  outline: 3px solid var(--blueprint-blue);
+  outline: 3px solid rgba(0, 134, 146, 0.3);
   outline-offset: 2px;
-  opacity: 0.3;
 }
 
 /* Info text styling */
@@ -126,20 +125,38 @@
 
 /* Forced colors mode support */
 @media (forced-colors: active) {
-  #edit-add-ons :checked + label:before {
+  #edit-add-ons :checked + label:after {
     content: "✓";
     border: solid 2px;
+    background-image: none;
   }
+}
+
+/* Ideal Visitor form - single column layout for longer text options */
+#custom-installer-ideal-visitor-form #edit-add-ons {
+  grid-template-columns: 1fr;
+}
+
+#custom-installer-ideal-visitor-form #edit-add-ons label {
+  height: auto;
+  min-height: 70px;
 }
 
 /* Responsive design */
 @media (max-width: 767px) {
   #edit-add-ons {
-    gap: var(--blueprint-space-sm);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--blueprint-space-md);
   }
-  
+
   #edit-add-ons label {
-    font-size: var(--blueprint-font-size-sm);
-    padding: var(--blueprint-space-sm) var(--blueprint-space-md);
+    font-size: var(--blueprint-font-size-base);
+    height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  #edit-add-ons {
+    grid-template-columns: 1fr;
   }
 }

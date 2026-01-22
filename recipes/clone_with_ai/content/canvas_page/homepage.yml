@@ -15,16 +15,24 @@ default:
       target_id: 1
   title:
     -
-      value: 'Homepage'
+      value: Homepage
   components:
     -
       uuid: a680b57c-4c26-4d59-831f-188cc89b348e
       component_id: js.header
       inputs: {  }
     -
-      uuid: 59771b8d-3e30-424c-ac9e-1c6609243fe5
+      uuid: ff30a675-db18-4c22-9daa-b48a0358b332
       component_id: js.herosection
-      inputs: {  }
+      inputs:
+        badgeText: 'Free Legal Information for Immigrants'
+        headingText: 'Know Your Rights as an Immigrant in Illinois'
+        descriptionText: "Understanding your legal rights is essential. Whether you're facing enforcement, seeking protection, or need help navigating the system — we're here for you."
+        primaryCtaText: 'Get Free Legal Help'
+        primaryCtaHref: 'https://www.illinoislegalaid.org/get-legal-help'
+        secondaryCtaText: 'Learn Your Rights'
+        secondaryCtaHref: 'https://www.illinoislegalaid.org/get-legal-help'
+        disclaimerText: 'This information is for educational purposes and is not legal advice.'
     -
       uuid: 3f559613-fdac-4a2a-9a5d-9d3f9683e75e
       component_id: js.rightssection

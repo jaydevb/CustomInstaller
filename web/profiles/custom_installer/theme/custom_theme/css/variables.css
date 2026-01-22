@@ -54,6 +54,8 @@
   /* Typography */
   --blueprint-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --blueprint-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --blueprint-font-family-serif: 'PT Serif', Georgia, serif;
+  --blueprint-font-family-sans: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
   
   --blueprint-font-size-xs: 0.75rem;    /* 12px */
   --blueprint-font-size-sm: 0.875rem;   /* 14px */
@@ -64,6 +66,7 @@
   --blueprint-font-size-3xl: 2rem;      /* 32px */
   --blueprint-font-size-4xl: 2.5rem;    /* 40px */
   --blueprint-font-size-5xl: 3rem;      /* 48px */
+  --blueprint-font-size-6xl: 6rem;      /* 96px */
   
   --blueprint-font-weight-normal: 400;
   --blueprint-font-weight-medium: 500;
