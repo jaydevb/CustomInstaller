@@ -9,7 +9,7 @@
   color: var(--blueprint-gray-900);
   margin-bottom: 9px;
   font-weight: var(--blueprint-font-weight-medium);
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   letter-spacing: -0.368px;
   line-height: 1.5;
   display: block;
@@ -22,7 +22,7 @@
   color: var(--blueprint-gray-900);
   margin: 0 0 12px 0;
   line-height: 1.2;
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
 }
 
 /* Form Wrapper */
@@ -45,7 +45,7 @@
   border: 1px solid #959595;
   border-radius: var(--blueprint-radius-md);
   font-size: 18px;
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   color: var(--blueprint-text-dark);
   background: var(--blueprint-white);
   transition: all var(--blueprint-transition-base);
@@ -93,7 +93,7 @@ select.blueprint-select {
   padding-right: 48px;
   cursor: pointer;
   font-size: 20px;
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   font-weight: var(--blueprint-font-weight-normal);
 }
 
@@ -123,7 +123,7 @@ select.blueprint-select {
 .blueprint-form label {
   font-size: 20px;
   font-weight: var(--blueprint-font-weight-normal);
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   color: var(--blueprint-text-dark);
   margin-bottom: var(--blueprint-space-xs);
   display: block;
@@ -167,7 +167,7 @@ select.blueprint-select {
   border-radius: var(--blueprint-radius-md);
   font-size: 20px;
   font-weight: var(--blueprint-font-weight-semibold);
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   cursor: pointer;
   transition: all var(--blueprint-transition-base);
   text-decoration: none;
@@ -304,7 +304,7 @@ select.blueprint-select {
 .blueprint-helper-text {
   font-size: 24px;
   font-weight: var(--blueprint-font-weight-normal);
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   color: #909090;
   line-height: normal;
   margin: 0 0 48px 0;
@@ -324,7 +324,7 @@ select.blueprint-select {
   border-radius: var(--blueprint-radius-md) !important;
   font-size: 20px !important;
   font-weight: var(--blueprint-font-weight-semibold) !important;
-  font-family: 'Noto Sans', var(--blueprint-font-family) !important;
+  font-family: var(--blueprint-font-family-sans) !important;
   cursor: pointer !important;
   transition: all var(--blueprint-transition-base) !important;
   text-decoration: none !important;

@@ -42,7 +42,7 @@
   padding: 8px 16px;
   border-radius: var(--blueprint-radius-md);
   font-weight: var(--blueprint-font-weight-normal);
-  font-family: 'Noto Sans', var(--blueprint-font-family);
+  font-family: var(--blueprint-font-family-sans);
   line-height: normal;
   user-select: none;
   margin: 0;

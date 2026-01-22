@@ -1,5 +1,7 @@
 blueprint:
   css:
+    base:
+      //fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap: { type: external, minified: true }
     theme:
       css/variables.css: { weight: -10 }
       css/layout.css: { weight: -9 }
